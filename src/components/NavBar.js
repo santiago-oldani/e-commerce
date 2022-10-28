@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import CartWidget from './CartWidget';
+import logo from '../assets/shopify-logo.png'
 
 const ContainerNav = styled.div`
     display: flex;
@@ -34,7 +35,7 @@ const Logo = styled.img`
 const NavBar = () => {
     return (
         <ContainerNav>
-            <Logo src='/images/shopify-logo.png'/>
+            <Logo src= {logo}/>
             <UlNavBar>
                 <LiNavBar>Productos</LiNavBar>
                 <LiNavBar>Locales</LiNavBar>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import cart from '../assets/cart-icon.png'
 
 const Cart = styled.img`
     width: 40px;
@@ -9,7 +10,7 @@ const Cart = styled.img`
 
 const CartWidget = () => {
     return(
-        <Cart src='/images/cart-icon.png'/>
+        <Cart src= {cart}/>
     )
 }
 
