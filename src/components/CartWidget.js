@@ -9,7 +9,7 @@ const Cart = styled.img`
 
 const CartWidget = () => {
     return(
-        <Cart src='/cart-icon.png'/>
+        <Cart src='/images/cart-icon.png'/>
     )
 }
 
