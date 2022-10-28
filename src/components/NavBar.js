@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import CartWidget from './CartWidget';
+import ItemListContainer from './ItemListContainer';
+import {Box} from '@mui/material';
 
 const ContainerNav = styled.div`
     display: flex;
@@ -30,15 +33,6 @@ const Logo = styled.img`
     cursor: pointer;
 `
 
-const CartIcon = styled.img`
-    width: 40px;
-    height: 40px;
-    margin-right: 60px;
-    cursor: pointer;
-`
-
-
-
 const NavBar = () => {
     return (
         <ContainerNav>
@@ -49,7 +43,7 @@ const NavBar = () => {
                 <LiNavBar>Promociones y Cuotas</LiNavBar>
                 <LiNavBar>Gift Cards</LiNavBar>
             </UlNavBar>
-            <CartIcon src='/cart-icon.png'/>
+            <CartWidget/>
         </ContainerNav>
     )
 }
