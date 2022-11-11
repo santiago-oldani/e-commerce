@@ -1,15 +1,19 @@
 import { Box } from "@mui/material";
-import styled from "styled-components"
+import styled from '@emotion/styled';
+import ItemList from "./ItemList";
 
-const GreetingMessage = styled.p`
-    font-size: 18px;
+const DivContainer = styled(Box)`
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ column-gap: 20px;
+ padding: 0px 40px;
 `
 
-const ItemListContainer = ({greeting}) =>{
+const ItemListContainer = () =>{
     return(
-        <Box sx={{display: 'flex', justifyContent: "center", width: "100%"}}>
-        <GreetingMessage>{greeting}</GreetingMessage>
-        </Box>
+        <DivContainer>
+            <ItemList/>
+        </DivContainer>
     )
 }
 

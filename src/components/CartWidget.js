@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import cart from '../assets/cart-icon.png'
+import cart from '../assets/cart-icon.png';
 
 const Cart = styled.img`
     width: 40px;
