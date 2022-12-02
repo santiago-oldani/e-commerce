@@ -1,16 +1,16 @@
-import React, { createContext, useContext } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 
-export const AppContext = () => createContext();
+export const AppContext = createContext();
 export const useMyContext = () => useContext(AppContext);
 
-const CartContext = ({ children }) => {
-    const [state, setState] = useContext()
+const CartContextProvider = ({ children }) => {
+    const [state, setState] = useState([])
   return (
-    <AppContext value={[]}>
+    <AppContext.Provider value={[state, setState]}>
         {children}
-    </AppContext>
+    </AppContext.Provider>
   )
 }
 
-export default CartContext
+export default CartContextProvider

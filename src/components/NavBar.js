@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import CartWidget from './CartWidget';
-import logo from '../assets/shopify-logo.png';
 import { Link } from 'react-router-dom';
 
 const ContainerNav = styled.div`
@@ -10,6 +9,7 @@ const ContainerNav = styled.div`
     width: 100%;
     height: 100px;
     align-items: center;
+    background-color: #f5f4eb;
 `
 
 const UlNavBar = styled.ul`
@@ -18,17 +18,18 @@ const UlNavBar = styled.ul`
     list-style: none;
     align-items: center;
     margin-right: 150px;
+    margin-bottom: 0px;
 `
 const LiNavBar = styled.li`
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 `
 
 const Logo = styled.img`
     justify-self: flex-start;
-    width: 200px;
-    height: 75px;
+    width: 175px;
+    height: 60px;
     margin-left: 50px;
     cursor: pointer;
 `
@@ -36,9 +37,9 @@ const Logo = styled.img`
 const NavBar = () => {
     return (
         <ContainerNav>
-            <Link to='/'><Logo src= {logo}/></Link>
+            <Link to='/'><Logo src= {process.env.PUBLIC_URL + "/images/shopify-logo.png"}/></Link>
             <UlNavBar>
-                <LiNavBar>Productos</LiNavBar>
+                <Link to={'/products'} style={{textDecoration: 'none', listStyle: 'none', color: 'black'}}><LiNavBar>Productos</LiNavBar></Link>
                 <LiNavBar>Locales</LiNavBar>
                 <LiNavBar>Promociones y Cuotas</LiNavBar>
                 <LiNavBar>Gift Cards</LiNavBar>
