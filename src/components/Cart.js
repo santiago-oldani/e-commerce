@@ -47,7 +47,6 @@ const Cart = () => {
   const [checkout, setCheckout] = useState(false);
 console.log(cart)
   const { register, getValues, handleSubmit } = useForm();
-const [pagar,setPagar] = useState(false)
   const handleBuy = () => {
     setOpenModal(true);
   };
