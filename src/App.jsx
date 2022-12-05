@@ -6,11 +6,15 @@ import Cart from './components/Cart';
 import CartContextProvider from './context/CartContext';
 import WidgetCartContextProvider from './context/WidgetCartContext';
 import Landing from './components/Landing';
+import AlertContextProvider from './context/AlertContext'
+import ProductsContextProvider from './context/ProductsContext'
 
 function App() {
   return (
     <CartContextProvider>
       <WidgetCartContextProvider>
+        <AlertContextProvider>
+          <ProductsContextProvider>
         <BrowserRouter>
           <NavBar />
           <Routes>
@@ -21,6 +25,8 @@ function App() {
             <Route path='/cart' element={<Cart />} />
           </Routes>
         </BrowserRouter>
+        </ProductsContextProvider>
+        </AlertContextProvider>
       </WidgetCartContextProvider>
     </CartContextProvider>
 

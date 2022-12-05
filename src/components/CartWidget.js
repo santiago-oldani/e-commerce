@@ -9,19 +9,19 @@ const CounterCart = styled(Box)`
     width: 20px;
     height: 20px;
     border-radius: 30px;
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     z-index: 20;
     margin-left: 18px;
     font-size: 14px;
 `
 
 const CartWidget = () => {
-    const [WidgetCounter, setWidgetCounter] = useWidgetCartContext(0)
+    const [WidgetCounter,] = useWidgetCartContext(0)
     return (
         <Box>
             <CounterCart>{WidgetCounter}</CounterCart>
-            <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}><AiOutlineShoppingCart style={{ width: '35px', height: '35px', marginRight: '60px', cursor: 'pointer' }} /></Link>
+            <Link to={'/cart'} style={{textDecoration: 'none', color: 'black'}}><AiOutlineShoppingCart style={{ width: '35px', height: '35px', marginRight: '60px', cursor: 'pointer', color: 'white' }} /></Link>
         </Box>
     )
 }
