@@ -8,6 +8,7 @@ import WidgetCartContextProvider from './context/WidgetCartContext';
 import Landing from './components/Landing';
 import AlertContextProvider from './context/AlertContext'
 import ProductsContextProvider from './context/ProductsContext'
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -15,18 +16,19 @@ function App() {
       <WidgetCartContextProvider>
         <AlertContextProvider>
           <ProductsContextProvider>
-        <BrowserRouter>
-          <NavBar />
-          <Routes>
-          <Route path='*' element={<Landing />} />
-            <Route path='/' element={<Landing />} />
-            <Route path='/products' element={<ItemListContainer/>} />
-            <Route path='/category/:id' element={<ItemListContainer />} />
-            <Route path='/item/:id' element={<ItemDetailContainer />} />
-            <Route path='/cart' element={<Cart />} />
-          </Routes>
-        </BrowserRouter>
-        </ProductsContextProvider>
+            <BrowserRouter>
+              <NavBar />
+              <Routes>
+                <Route path='*' element={<Landing />} />
+                <Route path='/' element={<Landing />} />
+                <Route path='/products' element={<ItemListContainer />} />
+                <Route path='/category/:id' element={<ItemListContainer />} />
+                <Route path='/item/:id' element={<ItemDetailContainer />} />
+                <Route path='/cart' element={<Cart />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
+          </ProductsContextProvider>
         </AlertContextProvider>
       </WidgetCartContextProvider>
     </CartContextProvider>
