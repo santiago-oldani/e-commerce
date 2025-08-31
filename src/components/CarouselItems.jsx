@@ -42,7 +42,7 @@ const BtnContainer = styled.div`
 
 const ImageContainer = styled.img`
     width: 150px;
-    height: 200px;
+    height: auto;
 `
 
 const SlideContainer = styled.div`
@@ -70,9 +70,9 @@ const BuyButton = styled.button`
     }
 `
 
-const CarouselItems = ({ properties }) => {
+const CarouselItems = ({ products }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    console.log(properties);
+    console.log(products);
 
     return (
         <div style={{ position: "relative", padding: "20px", width: "100%", height: "auto" }}>
@@ -86,11 +86,11 @@ const CarouselItems = ({ properties }) => {
                 onSwiper={setThumbsSwiper}
                 loop={true}
             >
-                {properties?.map((obj, index) => (
+                {products?.map((obj, index) => (
                     <SwiperSlide key={index}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", width: "240px", height: "100%" }}>
                             <SlideContainer >
-                                <ImageContainer src={obj.pictureUrl} alt="" style={{ alignSelf: "center" }} />
+                                <ImageContainer src={obj.picturesUrl[0]} alt="" style={{ alignSelf: "center" }} />
                                 <h4 style={{ fontSize: "16px", fontWeight: "500", color: "#000", marginBottom: "12px" }}>{obj.title}</h4>
                                 <h4 style={{ fontSize: "1rem", color: "#757575", marginBottom: "6px" }}>{obj.categoria}</h4>
                                 <h4 style={{ fontSize: "1rem", fontWeight: "700", color: "#000", marginBottom: "10px" }}>$ {obj.price}</h4>

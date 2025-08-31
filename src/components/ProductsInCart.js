@@ -32,7 +32,7 @@ const ProductsInCart = () => {
   }
   const deleteItemFromArray = (array) => {
 
-    const newCart = cart?.filter((item) => item.title != array.title);
+    const newCart = cart?.filter((item) => item.title !== array.title);
     setCart(newCart);
     let contador = 0;
     newCart?.map((item) => {

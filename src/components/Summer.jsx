@@ -6,8 +6,10 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 90px 0px;
+    margin-top: 20px;
+    margin-bottom: 60px;
     gap: 10px;
+    
 `
 
 const Title = styled.h2`
@@ -16,7 +18,8 @@ const Title = styled.h2`
     font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
-    
+    margin: 0;
+    font-size: 30px;
 `
 
 const SubTitle = styled.h3`
@@ -45,7 +48,7 @@ const ButtonSeeMore = styled.button`
 const Summer = () => {
     return (
         <Container>
-            <Title>SUMMER.COLLECTION</Title>
+            <Title>SPRING.COLLECTION</Title>
             <SubTitle>Echa un vistazo a la nueva coleccion</SubTitle>
             <ButtonSeeMore>Ver más</ButtonSeeMore>
         </Container>

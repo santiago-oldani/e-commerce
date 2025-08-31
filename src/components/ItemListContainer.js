@@ -50,7 +50,7 @@ const ItemListContainer = ({ isLanding = false }) => {
 
   useEffect(() => {
     const getItemsSelect = async () => {
-      if (id == "0") {
+      if (id === "0") {
         const items = await getItems();
         setProducts(items);
         setValue(id);
@@ -103,21 +103,21 @@ const ItemListContainer = ({ isLanding = false }) => {
             <Link to={"/category/0"} style={{ textDecoration: "none" }}>
               <Chip
                 label="Todos"
-                variant={id == "0" ? "contained" : "outlined"}
+                variant={id === "0" ? "contained" : "outlined"}
                 sx={{ cursor: "pointer", width: "100%" }}
               />
             </Link>
             <Link to={"/category/muebles"} style={{ textDecoration: "none" }}>
               <Chip
                 label="Muebles"
-                variant={id == "muebles" ? "contained" : "outlined"}
+                variant={id === "muebles" ? "contained" : "outlined"}
                 sx={{ cursor: "pointer", width: "100%" }}
               />
             </Link>
             <Link to={"/category/ropa"} style={{ textDecoration: "none" }}>
               <Chip
                 label="Ropa"
-                variant={id == "ropa" ? "contained" : "outlined"}
+                variant={id === "ropa" ? "contained" : "outlined"}
                 sx={{ cursor: "pointer", width: "100%" }}
               />
             </Link>
@@ -127,7 +127,7 @@ const ItemListContainer = ({ isLanding = false }) => {
             >
               <Chip
                 label="Tecnologia"
-                variant={id == "tecnologia" ? "contained" : "outlined"}
+                variant={id === "tecnologia" ? "contained" : "outlined"}
                 sx={{ cursor: "pointer", width: "100%" }}
               />
             </Link>
@@ -137,7 +137,7 @@ const ItemListContainer = ({ isLanding = false }) => {
             >
               <Chip
                 label="Zapatillas"
-                variant={id == "zapatillas" ? "contained" : "outlined"}
+                variant={id === "zapatillas" ? "contained" : "outlined"}
                 sx={{ cursor: "pointer", width: "100%" }}
               />
             </Link>

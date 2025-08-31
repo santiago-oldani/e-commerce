@@ -3,18 +3,39 @@ import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
+
 const ContainerNav = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.2s ease;
+  height: auto;
+`
+
+const SubContainerNavBlack = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #111;
+  width: 100%;
+  height: 30px;
+`
+
+const SubContainerNavWhite = styled.div`
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
-  height: ${(props) => (props.scrolled ? "60px" : "100px")}; ;
   align-items: center;
   background-color: #fff;
+  height: 60px;
+  /* transition: height 0.2s ease;
+  height: ${(props) => (props.scrolled ? "60px" : "100px")}; ; */
 `;
 
 const UlNavBar = styled.ul`
@@ -71,22 +92,27 @@ const NavBar = () => {
   }, [])
 
   return (
-    <ContainerNav scrolled={scrolled}>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h2 style={{ letterSpacing: "15px", color: "#000", marginBottom: "0px" }}>SHOP</h2>
-      </Link>
-      <UlNavBar>
-        <Link
-          to={"/products"}
-          style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-        >
-          <LiNavBar>Productos</LiNavBar>
+    <ContainerNav>
+      <SubContainerNavBlack>
+
+      </SubContainerNavBlack>
+      <SubContainerNavWhite scrolled={scrolled}>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <h2 style={{ letterSpacing: "15px", color: "#000", marginBottom: "0px" }}>SHOP</h2>
         </Link>
-        <LiNavBar>Locales</LiNavBar>
-        <LiNavBar>Promociones y Cuotas</LiNavBar>
-        <LiNavBar>Gift Cards</LiNavBar>
-      </UlNavBar>
-      <CartWidget />
+        <UlNavBar>
+          <Link
+            to={"/products"}
+            style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+          >
+            <LiNavBar>Productos</LiNavBar>
+          </Link>
+          <LiNavBar>Locales</LiNavBar>
+          <LiNavBar>Promociones y Cuotas</LiNavBar>
+          <LiNavBar>Gift Cards</LiNavBar>
+        </UlNavBar>
+        <CartWidget />
+      </SubContainerNavWhite>
     </ContainerNav>
   );
 };

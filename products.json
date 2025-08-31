@@ -1,0 +1,379 @@
+[
+    {
+        "id": "1",
+        "categoria": "zapatillas",
+        "description": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 LV8 DE MODA UNISEX CóDIGO: IB6388-001",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike1b.png?alt=media&token=dfe971b6-e9aa-43fe-8f41-9e0e275f0ff5",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike1.png?alt=media&token=d836963d-fb07-4d3b-b760-75721d765782",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike1a.png?alt=media&token=b9bf6a22-8c3f-4947-8b32-05fff13b7eda"
+        ],
+        "price": 229999,
+        "size": [
+            37,
+            38,
+            38.5,
+            39,
+            39.5,
+            40.5,
+            42
+        ],
+        "stock": 21,
+        "title": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 LV8 UNISEX"
+    },
+    {
+        "id": "2",
+        "categoria": "zapatillas",
+        "description": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 LV8 DE MODA UNISEX CóDIGO: IB6388-001",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike2.png?alt=media&token=b7bfca92-7203-4375-96b0-8cadef578f52",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike2a.png?alt=media&token=303fc786-2fe2-4b10-8b69-a7fb3b40148c",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/nike2b.png?alt=media&token=fd07002d-bd20-4233-bca8-ae8e9e0b9611"
+        ],
+        "price": 169999,
+        "size": [
+            32.5,
+            33,
+            34,
+            34.5,
+            35,
+            35.5,
+            36.5,
+            37,
+            37.5
+        ],
+        "stock": 10,
+        "title": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 LV8 4 NIÑOS"
+    },
+    {
+        "id": "3",
+        "categoria": "zapatillas",
+        "description": "Cómodos, duraderos y atemporales: los Nike Air Force 1 son el número 1 por una razón. Con un diseño clásico inspirado en los años 80 y detalles audaces, ofrecen un estilo que destaca tanto en la cancha como en la calle. Los revestimientos cosidos en la parte superior aportan un toque de herencia con mayor durabilidad y soporte. Su amortiguación Nike Air, originalmente creada para el básquetbol de alto rendimiento, brinda una comodidad ligera durante todo el día. Con un corte bajo que ofrece un look limpio y sencillo, y un cuello acolchado que asegura un ajuste suave y confortable, estos tenis combinan estilo y funcionalidad para acompañarte donde vayas.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694753-800-auto.png?alt=media&token=fce5db3b-8f76-4220-9e9d-3f8df8c93a46",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694754-800-auto.png?alt=media&token=80f1299e-ff06-4d73-bcd1-956ebe56d268",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694755-800-auto.png?alt=media&token=d993212b-86a7-46d5-a3b3-eaa5c0dc9249"
+        ],
+        "price": 229999,
+        "size": [
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            44.5
+        ],
+        "stock": 20,
+        "title": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 LV8 HOMBRE"
+    },
+    {
+        "id": "4",
+        "categoria": "zapatillas",
+        "description": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 DE MODA PARA MUJER CóDIGO: DZ2784-102",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694131-800-auto.png?alt=media&token=fb17576d-e855-4cea-844c-01cc88b7213b",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694134-800-auto.png?alt=media&token=1975a10b-32c4-4160-9297-91aa8e167ca8",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694133-800-auto.png?alt=media&token=a3bd913d-7a57-4237-9a2d-60c58a068428"
+        ],
+        "price": 127399,
+        "size": [
+            35,
+            35.5,
+            36.5,
+            37,
+            37.5
+        ],
+        "stock": 8,
+        "title": "ZAPATILLAS NIKE SPORTSWEAR AIR FORCE 1 '07 MUJER"
+    },
+    {
+        "id": "5",
+        "categoria": "zapatillas",
+        "description": "Estos Air Force 1 están diseñados para moverse contigo. Pensados especialmente para bailarines, incorporan amortiguación Air en el antepié que brinda una sujeción personalizada y cómoda en cada paso. Su parte superior anatómica, con un refuerzo más grueso en la zona del tobillo, asegura una mejor sujeción del mediopié y el talón, mientras que la suela exterior flexible te permite desplegar toda tu destreza y estilo con facilidad. Un clásico reinventado para quienes necesitan libertad y soporte en cada movimiento.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1680654-800-auto.png?alt=media&token=40b39daa-40fe-4de6-b452-a74a316dfc1f",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1680657-800-auto.png?alt=media&token=70407187-39c9-470d-b515-99d83dc50e63",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1680660-800-auto.png?alt=media&token=9485d090-ab69-462d-9482-933ab8afaf1f"
+        ],
+        "price": 249999,
+        "size": [
+            35,
+            35.5,
+            36.5,
+            37,
+            37.5,
+            38,
+            39,
+            39.5
+        ],
+        "stock": 7,
+        "title": "Zapatillas Nike Sportswear AIR FORCE 1 DANCE MUJER"
+    },
+    {
+        "id": "6",
+        "categoria": "zapatillas",
+        "description": "Inspiradas en el AJ1 original, las Air Jordan 1 Mid mantienen el look icónico que marcó una era, incorporando combinaciones de colores distintivas y cuero de primera calidad. Su parte superior de cuero, cuero sintético y tela ofrece soporte y durabilidad, mientras que la entresuela de espuma con amortiguación Nike Air proporciona una comodidad ligera para todo el día. La suela de goma con punto de pivote asegura una tracción duradera, perfecta para acompañarte dentro y fuera de la cancha.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694556-800-auto.png?alt=media&token=a8139d36-dcd6-42ae-805b-23f56952ac3b",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694557-800-auto.png?alt=media&token=e64c2ae4-ea18-422a-a666-25005b2106eb",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1694558-800-auto.png?alt=media&token=282237e9-6682-4765-8ec0-05cec23f9380"
+        ],
+        "price": 229999,
+        "size": [
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            44.5
+        ],
+        "stock": 15,
+        "title": "ZAPATILLAS JORDAN AIR 1 MID HOMBRE"
+    },
+    {
+        "id": "7",
+        "categoria": "zapatillas",
+        "description": "ZAPATILLAS JORDAN AIR 1 LOW SE DE MODA PARA HOMBRE CóDIGO: HJ5999-400",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1692668-800-auto.png?alt=media&token=45be2905-31a6-45bc-a15c-1439d21b67f6",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1692669-800-auto.png?alt=media&token=344bf350-8cb0-4222-8290-54600a15e217",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1692670-800-auto.png?alt=media&token=36543bb1-8206-4907-b4fe-a1bd693be0aa"
+        ],
+        "price": 229999,
+        "size": [
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            44.5
+        ],
+        "stock": 12,
+        "title": "ZAPATILLAS JORDAN AIR 1 LOW SE HOMBRE"
+    },
+    {
+        "id": "8",
+        "categoria": "zapatillas",
+        "description": "Un estilo icónico y duradero. Los Air Jordan 1 combinan el diseño clásico de los originales con materiales premium que te acompañan todo el día. La parte superior de cuero auténtico y cuero sintético brinda comodidad y resistencia, mientras que la unidad Nike Air en el talón ofrece una amortiguación ligera y flexible. Las ranuras flexibles en la parte delantera de la suela y la suela de goma proporcionan tracción en distintos tipos de superficies, haciendo de estos sneakers una combinación perfecta de estilo y rendimiento.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698150-800-auto.png?alt=media&token=3a800ca9-111c-46a3-a967-b28ebddb790d",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698151-800-auto.png?alt=media&token=82e70228-a6d5-458d-bbc2-14abbc520d87",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698153-800-auto.png?alt=media&token=7dbd9393-7b1f-4042-8132-f19a2b1b8673"
+        ],
+        "price": 189999,
+        "size": [
+            34.5,
+            35.5,
+            37,
+            37.5,
+            38,
+            39
+        ],
+        "stock": 3,
+        "title": "ZAPATILLAS JORDAN AIR 1 LOW NIÑOS"
+    },
+    {
+        "id": "9",
+        "categoria": "zapatillas",
+        "description": "Las Air Jordan 1 Mid combinan un look icónico con comodidad de primer nivel. La unidad Air-Sole en el talón ofrece una amortiguación ligera y sensible, mientras que el cuello acolchado brinda mayor sujeción y confort. La parte superior de cuero premium y material sintético asegura durabilidad y soporte, y la suela de goma garantiza tracción en distintos tipos de superficies. Estas zapatillas son la combinación perfecta de estilo, rendimiento y comodidad para cada momento del día y de la cancha.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698350-800-auto.png?alt=media&token=b24665dc-440d-4b9d-9533-33109a8961d7",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698351-800-auto.png?alt=media&token=6b90bd1c-1da6-4b09-88b9-05d5faba16eb",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1698352-800-auto.png?alt=media&token=073f7cb1-8a06-45cc-820e-cd174bb83afa"
+        ],
+        "price": 229999,
+        "size": [
+            35,
+            35.5,
+            36.5,
+            37,
+            37.5,
+            38,
+            39,
+            39.5
+        ],
+        "stock": 5,
+        "title": "ZAPATILLAS JORDAN AIR 1 MUJER"
+    },
+    {
+        "id": "10",
+        "categoria": "zapatillas",
+        "description": "Inspiradas en el modelo original de 1985, las Air Jordan 1 Low ofrecen un estilo clásico que se renueva constantemente sin perder su esencia. Con una silueta icónica y un diseño que combina fácilmente con cualquier look, estas zapatillas aseguran una presencia destacada en todo momento. Su capellada de cuero auténtico brinda durabilidad y un acabado premium, mientras que la amortiguación ligera y la suela de excelente tracción completan una propuesta pensada tanto para el uso diario como para quienes valoran el legado Jordan con un toque moderno.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682218-800-auto.png?alt=media&token=4f0cd7f3-1b7e-4a9e-9b16-d22720e744cb",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682220-800-auto.png?alt=media&token=8ad41b0b-8465-47a9-86ac-5556bc49d8ff",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682222-800-auto.png?alt=media&token=983e10bb-2583-4400-b59a-40be23c32035"
+        ],
+        "price": 199999,
+        "size": [
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            44.5
+        ],
+        "stock": 30,
+        "title": "Zapatillas Jordan AIR 1 LOW HOMBRE"
+    },
+    {
+        "id": "11",
+        "categoria": "zapatillas",
+        "description": "La sencillez nunca pasa de moda. Con su diseño minimalista, las zapatillas Samba XLG de adidas demuestran que menos siempre es más. El empeine de piel granulada aporta un estilo elegante, disponible en blanco o negro. Originalmente creadas como modelo de fútbol para entrenamientos en pista cubierta, las Samba trascendieron el mundo deportivo para convertirse en un clásico de la moda urbana. Las suelas de goma ofrecen una excelente tracción, mientras que la puntera reforzada garantiza mayor resistencia al desgaste. Combiná estas zapatillas con cualquier prenda, desde un pantalón de chándal hasta un jean, y logrará un look informal y atemporal.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1663547-800-auto.png?alt=media&token=59a0161d-7e2c-4b5b-b0b1-f4cd1b8eecec",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1663548-800-auto.png?alt=media&token=b846bc48-ff33-41aa-a478-1f799e0251ac",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1663549-800-auto.png?alt=media&token=a140069d-f70a-40a4-bb18-66efeec36cdd"
+        ],
+        "price": 179999,
+        "size": [
+            36.5,
+            37.5,
+            38,
+            38.5,
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            45
+        ],
+        "stock": 24,
+        "title": "Zapatillas Adidas Originals SAMBA XLG UNISEX"
+    },
+    {
+        "id": "12",
+        "categoria": "zapatillas",
+        "description": "Lanzadas en los años 50 como unas zapatillas de cancha cubierta, las adidas Samba han sido un clásico desde entonces. Estas zapatillas Samba OG rinden homenaje a la clásica silueta con una suela de caucho natural y las 3 Tiras dentadas. Los detalles de diseño sutiles como los forros de color y las perforaciones elevan tu look.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1611546-800-auto.png?alt=media&token=54d177da-94d1-4498-aa80-85d6d8a8247a",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1611548-800-auto.png?alt=media&token=16e2baa7-1a74-4c88-82f4-7a303cb94c4c",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1611550-800-auto.png?alt=media&token=da21e662-9059-458f-b810-c8a691fff78e"
+        ],
+        "price": 149999,
+        "size": [
+            38.5,
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5
+        ],
+        "stock": 13,
+        "title": "Zapatillas Adidas Originals SAMBA OG HOMBRE"
+    },
+    {
+        "id": "13",
+        "categoria": "zapatillas",
+        "description": "Zapatillas Adidas Originals ADIFOM SAMBA 360 De Moda Para NIÑOS Código: JP8626",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1689414-800-auto.png?alt=media&token=ad11e94c-34c4-4f5f-9a64-9d094ffea7a1",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1689415-800-auto.png?alt=media&token=303cc576-7b78-4757-973f-2323c0f9a4b6",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1689417-800-auto.png?alt=media&token=86775a43-a0bc-4b81-aa95-d9e6df7f3f41"
+        ],
+        "price": 119999,
+        "size": [
+            27.5,
+            28.5,
+            30.5,
+            31,
+            31.5,
+            33,
+            33.5
+        ],
+        "stock": 8,
+        "title": "Zapatillas Adidas Originals ADIFOM SAMBA 360 NIÑOS"
+    },
+    {
+        "id": "14",
+        "categoria": "zapatillas",
+        "description": "Inspiradas en el modelo original de 1985, las Air Jordan 1 Low ofrecen un estilo clásico que se renueva constantemente sin perder su esencia. Con una silueta icónica y un diseño que combina fácilmente con cualquier look, estas zapatillas aseguran una presencia destacada en todo momento. Su capellada de cuero auténtico brinda durabilidad y un acabado premium, mientras que la amortiguación ligera y la suela de excelente tracción completan una propuesta pensada tanto para el uso diario como para quienes valoran el legado Jordan con un toque moderno.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682218-800-auto.png?alt=media&token=4f0cd7f3-1b7e-4a9e-9b16-d22720e744cb",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682220-800-auto.png?alt=media&token=8ad41b0b-8465-47a9-86ac-5556bc49d8ff",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1682222-800-auto.png?alt=media&token=983e10bb-2583-4400-b59a-40be23c32035"
+        ],
+        "price": 199999,
+        "size": [
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44,
+            44.5
+        ],
+        "stock": 30,
+        "title": "Zapatillas Jordan AIR 1 LOW HOMBRE"
+    },
+    {
+        "id": "15",
+        "categoria": "zapatillas",
+        "description": "Las adidas Campus 00s Beta reinventan una silueta clásica con una estética fresca y urbana. El exterior combina cuero liso con capas de gamuza, logrando un contraste de texturas que resalta a simple vista. Los paneles adicionales, las perforaciones y la lengüeta de malla suman profundidad y estilo, mientras que la suela de caucho asegura tracción y un andar firme. Un modelo que fusiona herencia y modernidad, ideal para destacar en cualquier ocasión.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1691627-800-auto.png?alt=media&token=f16e1928-f852-48e2-a704-27bc5f2a78cd",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1691626-800-auto.png?alt=media&token=8858e26f-1834-4c84-a17e-d98697f54d6d",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1691627-800-auto.png?alt=media&token=f16e1928-f852-48e2-a704-27bc5f2a78cd"
+        ],
+        "price": 179999,
+        "size": [
+            38,
+            38.5,
+            39,
+            39.5,
+            40,
+            41,
+            41.5,
+            42,
+            43,
+            43.5,
+            44
+        ],
+        "stock": 22,
+        "title": "Zapatillas Adidas Originals CAMPUS 00S BETA UNISEX"
+    },
+    {
+        "id": "16",
+        "categoria": "zapatillas",
+        "description": "Las zapatillas adidas Campus son un clásico del estilo urbano que no pasa de moda. Este modelo presenta un exterior de gamuza de primera calidad y colores llamativos que marcan la diferencia, mientras que las 3 Tiras y las perforaciones mantienen ese look icónico. Perfectas para salir a pasar el día o para relajarte con amigos, estas zapatillas te permiten expresar tu estilo personal con versatilidad y comodidad.",
+        "picturesUrl": [
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1696551-800-auto.png?alt=media&token=cda83c0f-eadf-4b94-a521-4ba31f3e039d",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1696553-800-auto.png?alt=media&token=7972544a-4d86-4414-9706-fe896c9def4a",
+            "https://firebasestorage.googleapis.com/v0/b/e-commerce-coderhouse-769bf.appspot.com/o/1696555-800-auto.png?alt=media&token=700a6650-6a49-4fd5-80b7-7ba3fc4b9fec"
+        ],
+        "price": 169999,
+        "size": [
+            34.5,
+            35.5,
+            36,
+            36.5,
+            37.5,
+            38,
+            38.5,
+            39,
+            39.5
+        ],
+        "stock": 17,
+        "title": "ZAPATILLAS ADIDAS ORIGINALS CAMPUS 00S MUJER"
+    }
+]
