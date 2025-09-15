@@ -39,12 +39,13 @@ const ItemList = () => {
               />
             );
           })
-        : [1, 2, 3, 4, 5, 6].map(() => {
+        : [1, 2, 3, 4, 5, 6].map((index) => {
             return (
-              <DivContainer sx={{ marginTop: "100px" }}>
+              <DivContainer key={index} sx={{ marginTop: "100px" }}>
                 <Skeleton
                   variant="rectangular"
-                  sx={{ width: "330px", height: "471px" }}
+                  sx={{ width: "300px", height: "400px" }}
+                  
                 />
               </DivContainer>
             );

@@ -35,7 +35,6 @@ const CarouselAirForce = () => {
         }
     }, []);
 
-    console.log(products, "ATENTO A ESTE CLG");
     return (
         <Container>
             <Title>AIR FORCE</Title>

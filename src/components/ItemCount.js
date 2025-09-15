@@ -25,14 +25,19 @@ const BoxIcons = styled(Box)`
 `
 
 const StyledButton = styled(Button)`
-    width: ${props => props.isFromDetail ? '350px' : 'auto'};
-    color: ${props => props.isFromDetail ? '#fff' : 'auto'};
-    border-radius: ${props => props.isFromDetail ? '30px' : '0px'};
-    height: ${props => props.isFromDetail ? '100px' : 'auto'};
-    border:  ${props => props.isFromDetail ? '1px solid lightgray' : 'auto'};
-    justify-self: ${props => props.isFromDetail ? 'center' : 'auto'};
+    width: 350px;
+    color: #fff;
+    border-radius: 30px;
+    background-color: #000;
+    height: 100px;
+    border: 1px solid lightgray;
+    justify-self: center ;
+
     &:hover {
-        border-color: ${props => props.isFromDetail ? 'lightgray' : 'auto'};
+        opacity: 0.8;
+        background-color: #000;
+        color: #fff;
+        transition: all 0.2s;
     }
 `
 
@@ -40,7 +45,7 @@ const Subcontainer = styled(Box)`
   display: flex;
   width: 90px;
   gap: 10px;
-  justify-content: ${props => props.isFromDetail ? 'center' : 'space-between'};
+  justify-content:'center';
   align-items: center;
   border-radius: 3px;
   margin-top: 30px;
@@ -68,6 +73,7 @@ const ItemCount = ({
       setDetailCounter(detailCounter + 1);
     }
   };
+
   const minCounter = () => {
     if (counter > 1 && !detailCounter) {
       setCounter(counter - 1);
@@ -75,7 +81,9 @@ const ItemCount = ({
       setDetailCounter(detailCounter - 1);
     }
   };
+
   const onAdd = async () => {
+    console.log(product)
     if (counter <= product.stock) {
       const itemExist = cart.find((item) =>
         item.title === product.title ? true : false
@@ -96,10 +104,11 @@ const ItemCount = ({
             title: product.title,
             quantity: counter,
             price: product.price,
-            image: product.pictureUrl,
+            image: product.picturesUrl[0],
           },
         ];
       }
+
       const newProductsList = products.map((producto) => {
         if (producto.title === product.title) {
           return { ...product, stock: producto.stock - counter };
@@ -126,19 +135,19 @@ const ItemCount = ({
         isFromDetail={isFromDetail}>
         <HiMinusSm
           onClick={() => minCounter()}
-          color={isFromDetail ? "#fff" : 'blue'}
+          color={isFromDetail ? "#000" : 'blue'}
           style={{ cursor: "pointer" }}
           isFromDetail={isFromDetail}
         />
         </BoxIcons>
         <Typography
         isFromDetail={isFromDetail}
-        color={isFromDetail ? '#fff' : 'auto'}>{counter}</Typography>
+        color={isFromDetail ? '#000' : 'auto'}>{counter}</Typography>
         <BoxIcons
         isFromDetail={isFromDetail}>
         <HiPlusSm
           onClick={() => plusCounter()}
-          color={isFromDetail ? "#fff" : 'blue'}
+          color={isFromDetail ? "#000" : 'blue'}
           style={{ cursor: "pointer" }}
           isFromDetail={isFromDetail}
         />

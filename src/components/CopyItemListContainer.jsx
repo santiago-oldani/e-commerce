@@ -33,7 +33,7 @@ const DivContainer = styled(Box)`
   }
 `;
 
-const ItemListContainer = ({ isLanding = false }) => {
+const CopyItemListContainer = ({ isLanding = false }) => {
   const [value, setValue] = useState("0");
   const { id } = useParams();
   const [, setProducts] = useProducts(null);
@@ -171,4 +171,4 @@ const ItemListContainer = ({ isLanding = false }) => {
   );
 };
 
-export default ItemListContainer;
+export default CopyItemListContainer;

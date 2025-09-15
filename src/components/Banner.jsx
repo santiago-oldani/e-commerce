@@ -30,7 +30,7 @@ const Images = styled.img`
     opacity: 0.8;
     transition: 0.3s;
   }
-  loading: lazy;
+  
 `
 
 const ButtonSex = styled.button`

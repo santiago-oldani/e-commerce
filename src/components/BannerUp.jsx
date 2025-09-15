@@ -13,7 +13,7 @@ const BannerDiv = styled.div`
 `
 
 const Images = styled.img`
-    width: 48%;
+    width: 50%;
     height: auto;
     loading: lazy;
 `

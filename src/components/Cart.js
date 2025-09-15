@@ -9,7 +9,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { FormControl, Input, InputLabel } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { calcularTotal } from "../utils";
-import {createItem} from '../app/api';
+import { createItem } from '../app/api';
 
 const ContainerProducts = styled(Box)`
   display: flex;
@@ -45,7 +45,7 @@ const Cart = () => {
   const [cart] = useMyContext(null);
   const [openModal, setOpenModal] = useState();
   const [checkout, setCheckout] = useState(false);
-console.log(cart)
+  console.log(cart)
   const { register, getValues, handleSubmit } = useForm();
   const handleBuy = () => {
     setOpenModal(true);
@@ -64,10 +64,10 @@ console.log(cart)
     setCheckout(true);
   };
 
-  const handlePagar = () => {}
+  const handlePagar = () => { }
 
   return (
-    <>
+    <Box sx={{height: "100%"}}>
       {openModal && (
         <Modal open={openModal} onClose={() => setOpenModal(false)}>
           {!checkout ? (
@@ -136,32 +136,32 @@ console.log(cart)
           ) : (
             <Box>
               <ModalContainer>
-                <Box sx={{display:'flex', justifyContent:'center',alignItems:'center', height:'100%', flexDirection:'column'}}>
-                <AiFillCloseCircle
-                  cursor="pointer"
-                  onClick={() => {
-                    setOpenModal(false);
-                  }}
-                  style={{ position: "absolute", right: "20px", top: "20px" }}
-                />
-                <Box sx={{overflowY:'scroll', display:'flex', justifyContent:'flex-start', alignItems:'flex-start', flexDirection:'column', gap:'20px', width:'100%', padding:'30px', maxHeight:'70%'}}>
-                 
-                  {cart.map((item, index)=>{
-                    return(
-                      <Box key={index} sx={{display:'flex', gap:'20px', alignItems:'center', width:'100%'}} >
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', flexDirection: 'column' }}>
+                  <AiFillCloseCircle
+                    cursor="pointer"
+                    onClick={() => {
+                      setOpenModal(false);
+                    }}
+                    style={{ position: "absolute", right: "20px", top: "20px" }}
+                  />
+                  <Box sx={{ overflowY: 'scroll', display: 'flex', justifyContent: 'flex-start', alignItems: 'flex-start', flexDirection: 'column', gap: '20px', width: '100%', padding: '30px', maxHeight: '70%' }}>
+
+                    {cart.map((item, index) => {
+                      return (
+                        <Box key={index} sx={{ display: 'flex', gap: '20px', alignItems: 'center', width: '100%' }} >
                           <Typography variant="body1">{index + 1}</Typography>
-                        <Avatar size={70} src={item.image}></Avatar>
-                        <Typography variant="body1">{item.title}</Typography>
-                        <Typography variant="body2">x {item.quantity}</Typography>
-                        <Typography variant="body2"> {item.quantity * item.price}</Typography>
-                      </Box>
-                    )
-                  })}
-              
-                </Box>
-                <Box sx={{ display:'flex', gap:'20px', justifyContent:'space-between', width:'100%', padding:'10px'}}>
-                  <Typography  variant="h6">Total: ${calcularTotal(cart).toFixed(2)}</Typography>
-                  <Button onClick={handlePagar}>Pagar</Button>
+                          <Avatar size={70} src={item.image}></Avatar>
+                          <Typography variant="body1">{item.title}</Typography>
+                          <Typography variant="body2">x {item.quantity}</Typography>
+                          <Typography variant="body2"> {item.quantity * item.price}</Typography>
+                        </Box>
+                      )
+                    })}
+
+                  </Box>
+                  <Box sx={{ display: 'flex', gap: '20px', justifyContent: 'space-between', width: '100%', padding: '10px' }}>
+                    <Typography variant="h6">Total: ${calcularTotal(cart).toFixed(2)}</Typography>
+                    <Button onClick={handlePagar}>Pagar</Button>
                   </Box>
                 </Box>
               </ModalContainer>
@@ -187,7 +187,7 @@ console.log(cart)
       ) : (
         <Typography>No tienes ningun producto en el carrito.</Typography>
       )}
-    </>
+    </Box>
   );
 };
 

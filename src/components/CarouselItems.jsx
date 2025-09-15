@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 import { createGlobalStyle } from 'styled-components';
+import { Link } from "react-router-dom";
 
 const GlobalStyles = createGlobalStyle`
     
@@ -72,7 +73,6 @@ const BuyButton = styled.button`
 
 const CarouselItems = ({ products }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
-    console.log(products);
 
     return (
         <div style={{ position: "relative", padding: "20px", width: "100%", height: "auto" }}>
@@ -87,15 +87,18 @@ const CarouselItems = ({ products }) => {
                 loop={true}
             >
                 {products?.map((obj, index) => (
+
                     <SwiperSlide key={index}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", width: "240px", height: "100%" }}>
-                            <SlideContainer >
-                                <ImageContainer src={obj.picturesUrl[0]} alt="" style={{ alignSelf: "center" }} />
-                                <h4 style={{ fontSize: "16px", fontWeight: "500", color: "#000", marginBottom: "12px" }}>{obj.title}</h4>
-                                <h4 style={{ fontSize: "1rem", color: "#757575", marginBottom: "6px" }}>{obj.categoria}</h4>
-                                <h4 style={{ fontSize: "1rem", fontWeight: "700", color: "#000", marginBottom: "10px" }}>$ {obj.price}</h4>
-                                <BuyButton>Agregar al Carrito</BuyButton>
-                            </SlideContainer>
+                            <Link style={{textDecoration: "none", color: "#000"}} to={`/item/${obj.id}`}>
+                                <SlideContainer >
+                                    <ImageContainer src={obj.picturesUrl[0]} alt="" style={{ alignSelf: "center" }} />
+                                    <h4 style={{ fontSize: "16px", fontWeight: "500", color: "#000", marginBottom: "12px" }}>{obj.title}</h4>
+                                    <h4 style={{ fontSize: "1rem", color: "#757575", marginBottom: "6px" }}>{obj.categoria}</h4>
+                                    <h4 style={{ fontSize: "1rem", fontWeight: "700", color: "#000", marginBottom: "10px" }}>$ {obj.price}</h4>
+                                    <BuyButton>Agregar al Carrito</BuyButton>
+                                </SlideContainer>
+                            </Link>
                         </div>
                     </SwiperSlide>
                 ))}

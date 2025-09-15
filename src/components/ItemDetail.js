@@ -4,12 +4,17 @@ import styled from "@emotion/styled";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import { useProducts } from "../context/ProductsContext";
+import Sizes from "./Sizes";
 
 const DivContainer = styled(Box)`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   padding: 50px;
+  margin: 0 auto;
+  width: 70%;
+  gap: 50px;
 `
 
 const ItemDetail = ({ productDetail, setProductDetail }) => {
@@ -19,31 +24,32 @@ const ItemDetail = ({ productDetail, setProductDetail }) => {
 
   return (
     <DivContainer>
-      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", backgroundColor: '#0a0826', width: '70%', padding: '30px' }}>
-      <Typography
+      <Box sx={{display: "flex", flexDirection: "column", justifyContent: "center", width: "60%", alignItems: "flex-start"}}>
+        <img
+          src={productDetail.picturesUrl[0]}
+          style={{ width: "400px", height: "auto" }}
+        />
+        <h5 style={{fontWeight: "bold"}}>DESCRIPCION</h5>
+        <Typography sx={{width: "fit-content", color: '#73709e'}}>{productDetail.description}</Typography>
+      </Box>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "flex-start", backgroundColor: '#fff', width: '40%', padding: '30px' }}>
+        <Typography
           variant={"h3"}
-          sx={{ marginBottom: "25px", fontWeight: "bold", fontSize: "30px", color: '#fff' }}
+          sx={{ marginBottom: "25px", fontWeight: "bold", fontSize: "1.2rem" }}
         >
-          {productDetail.title.toUpperCase()}
+          {productDetail.title}
         </Typography>
         <Typography
-          style={{ fontSize: "24px", color: "#fff", marginBottom: '25px' }}
+          style={{ fontSize: "1rem", marginBottom: '25px', fontWeight: "bold" }}
         >
           ${productDetail.price}
         </Typography>
         <Typography
-          variant={"h5"}
-          sx={{ marginBottom: "15px", fontSize: "22px", color: '#fff'  }}
-        >
-          DESCRIPCION
-        </Typography>
-        <Typography sx={{ marginBottom: "100px", fontSize: "18px", color: '#73709e'  }}>
-          {productDetail.description}
-        </Typography>
-        <Typography sx={{ marginBottom: "100px", fontSize: "18px", color: '#fff'  }}>
-          Stock: {productDetail.stock}
-        </Typography>
+          sx={{ fontWeight: "bold", marginBottom: "5px", fontSize: "0.8rem" }}
+        >Seleccione un talle</Typography>
+        <Sizes numbers={productDetail} />
         
+
         {displayButton ? (
           <ItemCount
             products={products}
@@ -65,10 +71,6 @@ const ItemDetail = ({ productDetail, setProductDetail }) => {
         )}
 
       </Box>
-      <img
-        src={productDetail.pictureUrl}
-        style={{ width: "700px", height: "auto" }}
-      />
     </DivContainer>
   );
 };

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useRemoveFilters } from "../context/RemoveFilters";
 
 
 
@@ -79,6 +80,8 @@ const LiNavBar = styled.li`
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [setRemove] = useRemoveFilters(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,19 +100,38 @@ const NavBar = () => {
 
       </SubContainerNavBlack>
       <SubContainerNavWhite scrolled={scrolled}>
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/" style={{ textDecoration: "none" }} onClick={() => setRemove(true)}>
           <h2 style={{ letterSpacing: "15px", color: "#000", marginBottom: "0px" }}>SHOP</h2>
         </Link>
         <UlNavBar>
           <Link
-            to={"/products"}
+            to={"/products/all"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+            onClick={() => setRemove(true)}
           >
             <LiNavBar>Productos</LiNavBar>
           </Link>
-          <LiNavBar>Locales</LiNavBar>
-          <LiNavBar>Promociones y Cuotas</LiNavBar>
-          <LiNavBar>Gift Cards</LiNavBar>
+          <Link
+            to={"/products/hombre"}
+            style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+            onClick={() => setRemove(true)}
+          >
+            <LiNavBar>Hombre</LiNavBar>
+          </Link>
+          <Link
+            to={"/products/mujer"}
+            style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+            onClick={() => setRemove(true)}
+          >
+            <LiNavBar>Mujer</LiNavBar>
+          </Link>
+          <Link
+            to={"/products/niño"}
+            style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+            onClick={() => setRemove(true)}
+          >
+            <LiNavBar>Niños</LiNavBar>
+          </Link>
         </UlNavBar>
         <CartWidget />
       </SubContainerNavWhite>
