@@ -6,12 +6,12 @@ import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 
 
-const DivContainerFooter = styled.div`
+const DivContainerFooter = styled.footer`
     display: flex;
     flex-direction: row;
     background-color: #111;
     width: 100%;
-    height: 250px;
+    height: 150px;
     color: #fff;
     padding: 20px;
     bottom: 0;

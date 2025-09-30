@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Thumbs } from "swiper/modules";
 import 'swiper/css';
 import styled from '@emotion/styled';
-
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -44,6 +43,10 @@ const BtnContainer = styled.div`
 const ImageContainer = styled.img`
     width: 150px;
     height: auto;
+
+    @media (max-width: 1050px){
+        width: 100px;
+    }
 `
 
 const SlideContainer = styled.div`
@@ -65,21 +68,57 @@ const BuyButton = styled.button`
     border: none;
     align-self: end;
 
-
     &:hover{
         opacity: 0.8;
+    }
+
+    @media (max-width: 1050px){
+        width: 120px;
+        font-size: 10px;
+        padding: 8px 16px;
+    }
+`
+
+const Title = styled.h4`
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 12px;
+
+    @media (max-width: 1050px){
+        font-size: 12px;
     }
 `
 
 const CarouselItems = ({ products }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
+    const [slidesPerView, setSlidesPerView] = useState(4);
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1010) {
+                setSlidesPerView(2);
+            } else if (window.innerWidth < 1350){
+                setSlidesPerView(3);
+            } else{
+                setSlidesPerView(4);
+            }
+        }
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, [])
+
 
     return (
         <div style={{ position: "relative", padding: "20px", width: "100%", height: "auto" }}>
             <GlobalStyles />
             <Swiper
                 spaceBetween={20}
-                slidesPerView={4}
+                slidesPerView={slidesPerView}
                 navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
                 modules={[Navigation, Thumbs]}
                 watchSlidesProgress
@@ -90,10 +129,10 @@ const CarouselItems = ({ products }) => {
 
                     <SwiperSlide key={index}>
                         <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", justifyContent: "center", width: "240px", height: "100%" }}>
-                            <Link style={{textDecoration: "none", color: "#000"}} to={`/item/${obj.id}`}>
+                            <Link style={{ textDecoration: "none", color: "#000" }} to={`/item/${obj.id}`}>
                                 <SlideContainer >
                                     <ImageContainer src={obj.picturesUrl[0]} alt="" style={{ alignSelf: "center" }} />
-                                    <h4 style={{ fontSize: "16px", fontWeight: "500", color: "#000", marginBottom: "12px" }}>{obj.title}</h4>
+                                    <Title>{obj.title}</Title>
                                     <h4 style={{ fontSize: "1rem", color: "#757575", marginBottom: "6px" }}>{obj.categoria}</h4>
                                     <h4 style={{ fontSize: "1rem", fontWeight: "700", color: "#000", marginBottom: "10px" }}>$ {obj.price}</h4>
                                     <BuyButton>Agregar al Carrito</BuyButton>

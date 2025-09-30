@@ -23,8 +23,8 @@ const ImageProduct = styled.img`
 `;
 
 const ProductsInCart = () => {
-  const [cart, setCart] = useMyContext(null);
-  const [, setCartCounter] = useWidgetCartContext(0);
+  const [cart, setCart] = useMyContext();
+  const [, setCartCounter] = useWidgetCartContext();
   const [products, setProducts] = useProducts();
   const calculateToFixed = (item) =>{
     let subTotal = item.quantity * item.price

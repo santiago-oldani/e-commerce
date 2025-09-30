@@ -1,4 +1,5 @@
 import styled from "@emotion/styled"
+import { Link } from "react-router-dom"
 
 
 const Container = styled.div`
@@ -50,7 +51,9 @@ const Summer = () => {
         <Container>
             <Title>SPRING.COLLECTION</Title>
             <SubTitle>Echa un vistazo a la nueva coleccion</SubTitle>
-            <ButtonSeeMore>Ver más</ButtonSeeMore>
+            <Link to="/products/all" style={{textDecoration: "none", color: "black"}}>
+                <ButtonSeeMore>Ver más</ButtonSeeMore>
+            </Link>
         </Container>
     )
 }

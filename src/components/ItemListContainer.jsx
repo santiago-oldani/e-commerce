@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 import Filters from "./Filters";
 import { useLocation } from "react-router-dom";
+import { useMyContext } from "../context/CartContext";
 
 const DivContainer = styled(Box)`
   display: grid;
@@ -54,6 +55,10 @@ const ItemListContainer = ({ isLanding = false }) => {
   const modelos = params.getAll("modelo");
 
   const genders = params.getAll("gender");
+
+  const [cart, setCart] = useMyContext();
+    console.log(cart)
+  
 
   useEffect(() => {
     if (order === "Menor a mayor") {

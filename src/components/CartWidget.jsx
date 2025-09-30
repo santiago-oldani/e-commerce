@@ -20,11 +20,11 @@ const CounterCart = styled(Box)`
 `
 
 const CartWidget = () => {
-    const [WidgetCounter,] = useWidgetCartContext(0)
+    const [WidgetCounter,] = useWidgetCartContext()
     return (
         <Box style={{position: "relative"}}>
             <CounterCart style={{ position: "absolute", bottom: "0px"}}>{WidgetCounter}</CounterCart>
-            <Link to={'/cart'} style={{ textDecoration: 'none', color: 'black' }}>
+            <Link to={'/cart'} style={{ textDecoration: 'none', color: 'color' }}>
                 <IoBagAddOutline style={{ width: '30px', height: 'auto', marginRight: '60px', cursor: 'pointer', color: '#000' }} />
             </Link>
         </Box>

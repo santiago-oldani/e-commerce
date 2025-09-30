@@ -6,35 +6,38 @@ import { useState } from "react";
 import { useMyContext } from "../context/CartContext";
 import { useWidgetCartContext } from "../context/WidgetCartContext";
 import { useAlert } from "../context/AlertContext";
+import { Link } from "react-router-dom";
 
 const Container = styled(Box)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: 150px;
   align-items: center;
+  justify-content: center;
+  gap: 5px;
 `;
 
 const BoxIcons = styled(Box)`
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    border: ${props => props.isFromDetail ? '2px solid lightgray' : 'auto'};
-    padding: ${props => props.isFromDetail ? '5px' : 'auto'};
+    background-color: lightgray;
+    width: ${(props) => (props.isCounter ? "70px" : "50px")};
+    height: 50px;
+    cursor: ${(props) => (props.isCounter ? "auto" : "pointer")};
 `
 
 const StyledButton = styled(Button)`
-    width: 350px;
+    width: 300px;
     color: #fff;
-    border-radius: 30px;
     background-color: #000;
-    height: 100px;
+    height: 50px;
     border: 1px solid lightgray;
-    justify-self: center ;
+    margin: 0;
 
     &:hover {
-        opacity: 0.8;
+        opacity: 0.7;
         background-color: #000;
         color: #fff;
         transition: all 0.2s;
@@ -43,29 +46,24 @@ const StyledButton = styled(Button)`
 
 const Subcontainer = styled(Box)`
   display: flex;
-  width: 90px;
-  gap: 10px;
-  justify-content:'center';
+  width: auto;
+  gap: 5px;
+  height: auto;
+  justify-content: center;
   align-items: center;
-  border-radius: 3px;
-  margin-top: 30px;
 `
 
 const ItemCount = ({
   product,
   detailCounter,
   setDetailCounter,
-  eliminateButton,
-  isFromDetail,
   products,
   setProducts,
-  setProductDetail
 }) => {
   const [counter, setCounter] = useState(1);
-  const [cart, setCart] = useMyContext([]);
-  const [, setAlert] = useAlert();
+  const [cart, setCart] = useMyContext();
   const [widgetCounter, setWidgetCounter] = useWidgetCartContext(0);
-  
+
   const plusCounter = () => {
     if (counter < product.stock && !detailCounter) {
       setCounter(counter + 1);
@@ -118,53 +116,32 @@ const ItemCount = ({
       setProducts(newProductsList);
 
       setCart(newCart);
-      if (isFromDetail) {
-        setProductDetail({ ...product, stock: product.stock - counter });
-        eliminateButton(false);
-      }
-    } else {
-      setAlert({ show: true, message: "No stock" });
     }
   };
   return (
     <Container >
-      <Subcontainer
-      isFromDetail={isFromDetail}
-      >
-        <BoxIcons
-        isFromDetail={isFromDetail}>
-        <HiMinusSm
-          onClick={() => minCounter()}
-          color={isFromDetail ? "#000" : 'blue'}
-          style={{ cursor: "pointer" }}
-          isFromDetail={isFromDetail}
-        />
+      <Subcontainer>
+        <BoxIcons onClick={() => minCounter()}>
+          <HiMinusSm
+          />
         </BoxIcons>
-        <Typography
-        isFromDetail={isFromDetail}
-        color={isFromDetail ? '#000' : 'auto'}>{counter}</Typography>
-        <BoxIcons
-        isFromDetail={isFromDetail}>
-        <HiPlusSm
-          onClick={() => plusCounter()}
-          color={isFromDetail ? "#000" : 'blue'}
-          style={{ cursor: "pointer" }}
-          isFromDetail={isFromDetail}
-        />
+        <BoxIcons sx={{cursor: ""}} isCounter={true}>{counter}</BoxIcons>
+        <BoxIcons onClick={() => plusCounter()}>
+          <HiPlusSm
+          />
         </BoxIcons>
       </Subcontainer>
-       
-       <StyledButton
-        variant="outlined"
-        disabled={product.stock === 0}
-        sx={{ marginTop: 4, fontSize: 12 }}
-        onClick={onAdd}
-        isFromDetail={isFromDetail}
-      >
-        Agregar producto
-      </StyledButton>
-      
-    </Container>
+
+      <Link to={"/cart"} style={{ textDecoration: "none" }}>
+        <StyledButton
+          variant="outlined"
+          disabled={product.stock === 0}
+          onClick={onAdd}
+        >
+          Agregar al carrito
+        </StyledButton>
+      </Link>
+    </Container >
   );
 };
 

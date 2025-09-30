@@ -9,8 +9,8 @@ import Landing from './components/Landing';
 import AlertContextProvider from './context/AlertContext'
 import ProductsContextProvider from './context/ProductsContext'
 import Footer from './components/Footer';
-import styled from '@emotion/styled';
 import RemoveFiltersProvider from './context/RemoveFilters';
+import styled from '@emotion/styled';
 
 const LandingContainer = styled.div`
   display: flex;
@@ -25,36 +25,22 @@ const MainContainer = styled.main`
 function App() {
   return (
     <LandingContainer>
-
-      <CartContextProvider>
-        <WidgetCartContextProvider>
-          <AlertContextProvider>
-            <ProductsContextProvider>
-              <RemoveFiltersProvider>
-
-                <BrowserRouter>
-                  <NavBar />
-                  <MainContainer>
-                    <Routes>
-                      <Route path='*' element={<Landing />} />
-                      <Route path='/' element={<Landing />} />
-                      <Route path='/products/:gender/' element={<ItemListContainer />} />
-                      <Route path='/:categoria/:id' element={<ItemListContainer />} />
-                      <Route path='/item/:id' element={<ItemDetailContainer />} />
-                      <Route path='/cart' element={<Cart />} />
-                    </Routes>
-                  </MainContainer>
-                  <Footer />
-                </BrowserRouter>
-
-              </RemoveFiltersProvider>
-            </ProductsContextProvider>
-          </AlertContextProvider>
-        </WidgetCartContextProvider>
-      </CartContextProvider>
-      
+      <NavBar />
+      <MainContainer>
+        <Routes>
+          <Route path='*' element={<Landing />} />
+          <Route path='/' element={<Landing />} />
+          <Route path='/products/:gender/' element={<ItemListContainer />} />
+          <Route path='/:categoria/:id' element={<ItemListContainer />} />
+          <Route path='/item/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </MainContainer>
+      <Footer />
     </LandingContainer>
   );
 }
+
+
 
 export default App;

@@ -1,16 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+// main.jsx
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import CartContextProvider from "./context/CartContext";
+import WidgetCartContextProvider from "./context/WidgetCartContext";
+import AlertContextProvider from "./context/AlertContext";
+import ProductsContextProvider from "./context/ProductsContext";
+import RemoveFiltersProvider from "./context/RemoveFilters";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <CartContextProvider>
+        <WidgetCartContextProvider>
+          <AlertContextProvider>
+            <ProductsContextProvider>
+              <RemoveFiltersProvider>
+                <App />
+              </RemoveFiltersProvider>
+            </ProductsContextProvider>
+          </AlertContextProvider>
+        </WidgetCartContextProvider>
+      </CartContextProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 

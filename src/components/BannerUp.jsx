@@ -21,9 +21,9 @@ const Images = styled.img`
 const BannerUp = () => {
   return (
     <BannerDiv>
-            <Images src={modelo1}/>
-            <Images src={modelo4}/>
-        </BannerDiv>
+      <Images src={modelo1} />
+      <Images src={modelo4} />
+    </BannerDiv>
   )
 }
 

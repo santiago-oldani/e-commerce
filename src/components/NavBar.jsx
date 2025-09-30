@@ -3,10 +3,11 @@ import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useRemoveFilters } from "../context/RemoveFilters";
+import { IoIosMenu } from "react-icons/io";
 
 
 
-const ContainerNav = styled.div`
+const ContainerNav = styled.nav`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,7 +18,19 @@ const ContainerNav = styled.div`
   height: auto;
 `
 
-const SubContainerNavBlack = styled.div`
+const SubContainerNavBottom = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3ff;
+  width: 100%;
+  height: 30px;
+  font-size: 0.9rem;
+  padding: 15px 0px;
+`
+
+const SubContainerNavTop = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -27,7 +40,7 @@ const SubContainerNavBlack = styled.div`
   height: 30px;
 `
 
-const SubContainerNavWhite = styled.div`
+const SubContainerNavMid = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -46,6 +59,10 @@ const UlNavBar = styled.ul`
   align-items: center;
   margin-right: 150px;
   margin-bottom: 0px;
+
+  @media (max-width: 900px){
+    width: 50%;
+  }
 `;
 
 const LiNavBar = styled.li`
@@ -76,12 +93,41 @@ const LiNavBar = styled.li`
   &:hover::after {
     transform: scaleX(1);
   }
+
+  @media (max-width: 900px){
+    font-size: 12px;
+  }
 `;
+
+const Logo = styled.h2`
+  letter-spacing: 15px;
+  color: #000;
+  margin-bottom: 0px;
+
+  @media (max-width: 900px){
+    font-size: 22px;
+  }
+`
 
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [setRemove] = useRemoveFilters(false);
+  const [remove, setRemove] = useRemoveFilters(false);
+  const [menuDropdownActive, setMenuDropDownActive] = useState(false);
+  const [menuClicked, setMenuClicked] = useState(false);
 
+  useEffect(() => {
+    const handleMenu = () => {
+      if (window.innerWidth < 900) {
+        setMenuDropDownActive(true);
+      } else{
+        setMenuDropDownActive(false);
+      }
+    }
+    handleMenu();
+    window.addEventListener('resize', handleMenu);
+
+    return () => window.removeEventListener('resize', handleMenu)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -96,14 +142,15 @@ const NavBar = () => {
 
   return (
     <ContainerNav>
-      <SubContainerNavBlack>
+      <SubContainerNavTop>
 
-      </SubContainerNavBlack>
-      <SubContainerNavWhite scrolled={scrolled}>
+      </SubContainerNavTop>
+      <SubContainerNavMid scrolled={scrolled}>
         <Link to="/" style={{ textDecoration: "none" }} onClick={() => setRemove(true)}>
-          <h2 style={{ letterSpacing: "15px", color: "#000", marginBottom: "0px" }}>SHOP</h2>
+          <Logo>SHOP</Logo>
         </Link>
-        <UlNavBar>
+
+        {menuDropdownActive ? <IoIosMenu onClick={() => setMenuClicked(!menuClicked)} size={40}/> : <UlNavBar>
           <Link
             to={"/products/all"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
@@ -132,9 +179,12 @@ const NavBar = () => {
           >
             <LiNavBar>Niños</LiNavBar>
           </Link>
-        </UlNavBar>
+        </UlNavBar>}
+
+
         <CartWidget />
-      </SubContainerNavWhite>
+      </SubContainerNavMid>
+      <SubContainerNavBottom>Envio gratis a partir de $199.999</SubContainerNavBottom>
     </ContainerNav>
   );
 };

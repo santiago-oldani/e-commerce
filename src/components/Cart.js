@@ -10,6 +10,7 @@ import { FormControl, Input, InputLabel } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { calcularTotal } from "../utils";
 import { createItem } from '../app/api';
+import duda from '../assets/imgs/duda.png'
 
 const ContainerProducts = styled(Box)`
   display: flex;
@@ -41,8 +42,29 @@ const ModalContainer = styled(Box)`
   height: 50%;
 `;
 
+const ContainerNoitemsInCart = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 150px 0px; 
+  gap: 100px;
+`
+
+const GoShopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const Imagen = styled.img`
+  width: 400px;
+  height: auto;
+`
+
 const Cart = () => {
-  const [cart] = useMyContext(null);
+  const [cart] = useMyContext();
   const [openModal, setOpenModal] = useState();
   const [checkout, setCheckout] = useState(false);
   console.log(cart)
@@ -67,7 +89,7 @@ const Cart = () => {
   const handlePagar = () => { }
 
   return (
-    <Box sx={{height: "100%"}}>
+    <Box sx={{ height: "100%" }}>
       {openModal && (
         <Modal open={openModal} onClose={() => setOpenModal(false)}>
           {!checkout ? (
@@ -181,7 +203,12 @@ const Cart = () => {
               Comprar
             </BuyButton>
           ) : (
-            <Typography>No tienes ningun producto en el carrito.</Typography>
+            <ContainerNoitemsInCart>
+              <Typography sx={{ fontSize: "2rem", fontWeight: "bold" }}>No tienes ningun producto en el carrito.</Typography>
+              <GoShopContainer>
+                <Imagen src={duda}/>
+              </GoShopContainer>
+            </ContainerNoitemsInCart>
           )}
         </ContainerProducts>
       ) : (
