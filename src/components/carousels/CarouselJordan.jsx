@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from "react";
-import { useProducts } from "../context/ProductsContext";
-import { getItems } from "../app/api";
+import { useProducts } from "../../context/ProductsContext";
+import { getItems } from "../../app/api";
 import CarouselContainer from './CarouselContainer';
 import styled from '@emotion/styled';
 

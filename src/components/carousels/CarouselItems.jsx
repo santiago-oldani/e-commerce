@@ -77,6 +77,12 @@ const BuyButton = styled.button`
         font-size: 10px;
         padding: 8px 16px;
     }
+
+    @media (max-width: 1050px){
+        width: 120px;
+        font-size: 10px;
+        align-self: center;
+    }
 `
 
 const Title = styled.h4`
@@ -97,11 +103,13 @@ const CarouselItems = ({ products }) => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth < 1010) {
+            if (window.innerWidth < 670) {
+                setSlidesPerView(1);
+            } else if (window.innerWidth < 1010) {
                 setSlidesPerView(2);
-            } else if (window.innerWidth < 1350){
+            } else if (window.innerWidth < 1350) {
                 setSlidesPerView(3);
-            } else{
+            } else {
                 setSlidesPerView(4);
             }
         }

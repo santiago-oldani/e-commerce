@@ -28,7 +28,7 @@ const Cards = styled.div`
 `
 
 const Sizes = ({ numbers }) => {
-    const [selectedSize, setSelectedSize] = useState(null);
+    const [selectedSize, setSelectedSize] = useState(numbers.size[0]);
 
     const handleOnClick = (size) => {
         setSelectedSize(size);

@@ -7,10 +7,12 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
     gap: 10px;
-    
+    text-align: center;
+    background-color: #f3f3f3ff;
 `
 
 const Title = styled.h2`
@@ -21,6 +23,10 @@ const Title = styled.h2`
     font-style: normal;
     margin: 0;
     font-size: 30px;
+
+    @media (max-width: 360px){
+        font-size: 20px;
+    }
 `
 
 const SubTitle = styled.h3`
@@ -43,6 +49,10 @@ const ButtonSeeMore = styled.button`
     &:hover{
         opacity: 0.8;
         transition: 0.5s;
+    }
+
+    @media (max-width: 360px){
+        padding: 10px 24px;
     }
 `
 

@@ -1,16 +1,14 @@
-import { Box } from "@mui/material";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Banner from "./Banner";
 import Summer from "./Summer";
 import BannerUp from "./BannerUp";
 import styled from "@emotion/styled";
-import allstar from '../assets/imgs/allStar.png'
+import allstar from '../../assets/imgs/allStar.png'
 import FavoriteModels from "./FavoriteModels";
-import CarouselJordan from "./CarouselJordan";
-import CarouselAirForce from "./CarouselAirForce";
+import CarouselJordan from "../carousels/CarouselJordan";
+import CarouselAirForce from "../carousels/CarouselAirForce";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useMyContext } from "../context/CartContext";
+import { useMyContext } from "../../context/CartContext";
 
 const AllStarContainer = styled.div`
   display: flex;
@@ -41,12 +39,19 @@ const AllStar = styled.img`
   @media (max-width: 700px){
     width: 500px;
   }
+
+  @media (max-width: 550px){
+    width: 350px;
+  }
+
+  @media (max-width: 380px){
+    width: 300px;
+  }
 `
 
 
 const Landing = () => {
   const [cart, setCart] = useMyContext();
-  console.log(cart)
 
   return (
     <>

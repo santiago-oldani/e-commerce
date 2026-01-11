@@ -1,15 +1,10 @@
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import Cart from './components/Cart';
-import CartContextProvider from './context/CartContext';
-import WidgetCartContextProvider from './context/WidgetCartContext';
-import Landing from './components/Landing';
-import AlertContextProvider from './context/AlertContext'
-import ProductsContextProvider from './context/ProductsContext'
+import ItemListContainer from './components/item_products/ItemListContainer';
+import { Routes, Route } from 'react-router-dom';
+import ItemDetailContainer from './components/item_products/ItemDetailContainer';
+import Cart from './components/cart/Cart';
+import Landing from './components/landing/Landing';
 import Footer from './components/Footer';
-import RemoveFiltersProvider from './context/RemoveFilters';
 import styled from '@emotion/styled';
 
 const LandingContainer = styled.div`
@@ -33,7 +28,6 @@ function App() {
           <Route path='/products/:gender/' element={<ItemListContainer />} />
           <Route path='/:categoria/:id' element={<ItemListContainer />} />
           <Route path='/item/:id' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<Cart />} />
         </Routes>
       </MainContainer>
       <Footer />

@@ -8,20 +8,43 @@ import styled from "@emotion/styled";
 
 // Estilos para el Swiper interno de miniaturas
 const VerticalSwiperContainer = styled.div`
+  /* 1. Definimos un ancho fijo para la columna de miniaturas */
+  width: 100px; 
+  flex-shrink: 0; /* Evita que el contenedor se comprima */
   
-  width: 100%;
-  height: auto;
+  .swiper {
+    /* El alto debe ser fijo para que el cálculo de los slides funcione */
+    height: 500px !important; 
+  }
+
   .swiper-slide {
-    height: calc((100% - 36px) / 4); /* 4 slides, 12px gap → 3 gaps = 36px */
+    /* 2. Aseguramos que el slide mantenga su tamaño */
+    width: 100%;
+    height: 116px !important; /* (500px total - 36px de gaps) / 4 aprox */
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s ease;
+
+    /* Estilo para cuando la miniatura está activa */
+    &.swiper-slide-thumb-active {
+      border: 2px solid #000;
+    }
   }
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* 3. Object-fit cover es clave para que no se estiren */
+    object-fit: cover; 
+  }
+
+  @media(max-width: 650px){
+    display: none;
   }
 `;
 
@@ -35,7 +58,12 @@ const CarouselContainer = styled.div`
 `;
 
 const MainSwiperWrapper = styled.div`
-  width: 100%;
+  /* Cambia 100% por el valor exacto que necesites */
+  width: 600px; 
+  /* O puedes usar un mínimo para que no colapse */
+  min-width: 600px; 
+  
+  flex-shrink: 0; /* Evita que el contenedor se comprima si está dentro de un Flex */
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -45,12 +73,29 @@ const MainSwiperWrapper = styled.div`
     justify-content: center;
     align-items: center;
     background: #f8f9fa;
+    /* Asegura que el slide ocupe todo el ancho del wrapper fijo */
+    width: 100% !important; 
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    /* 'cover' para llenar el espacio fijo o 'contain' para ver la imagen completa */
+    object-fit: cover; 
   }
 
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+  @media(max-width: 1745px){
+    width: 500px;
+    min-width: 500px; 
+  }
+
+  @media(max-width: 1565px){
+    width: 400px;
+    min-width: 400px; 
+  }
+
+  @media(max-width: 480px){
+    width: 300px;
+    min-width: 300px; 
   }
 `;
 
@@ -72,18 +117,16 @@ const ThumbsSwiperWrapper = styled.div`
       border-color: #000;
     }
   }
+
+  @media(max-width: 650px){
+    display: none;
+  }
 `;
 
 const CarouselDetail = ({ productDetail }) => {
     const [thumbsSwiper, setThumbsSwiper] = useState(null);
     const mainSwiperRef = useRef(null);
     const pictures = useMemo(() => productDetail?.picturesUrl || [], [productDetail]);
-
-    useEffect(() =>{
-      console.log(thumbsSwiper);
-    }, [thumbsSwiper])
-
-    console.log(thumbsSwiper);
 
     return (
     <CarouselContainer>

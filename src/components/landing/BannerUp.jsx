@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
-import modelo1 from '../assets/imgs/modeloBannerUp.jpg'
-import modelo4 from '../assets/imgs/modeloBannerUp2.jpg'
+import modelo1 from '../../assets/imgs/modeloBannerUp.jpg'
+import modelo4 from '../../assets/imgs/modeloBannerUp2.jpg'
 
 
 const BannerDiv = styled.div`

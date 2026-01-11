@@ -1,15 +1,14 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import styled from "@emotion/styled";
-import ItemList from "./ItemList";
+import ItemList from "../item_products/ItemList";
 import { useRef, useState } from "react";
 import { useEffect } from "react";
-import { getItemsByCondition, getItems, getItemsByGender } from "../app/api";
-import { useProducts } from "../context/ProductsContext";
-import { Link, useParams } from "react-router-dom";
+import { getItems, getItemsByGender } from "../../app/api";
+import { useProducts } from "../../context/ProductsContext";
+import { useParams } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
-import Filters from "./Filters";
+import Filters from "../Filters";
 import { useLocation } from "react-router-dom";
-import { useMyContext } from "../context/CartContext";
 
 const DivContainer = styled(Box)`
   display: grid;
@@ -38,9 +37,29 @@ const OrderByPrice = styled(Box)`
   gap: 8px;
   cursor: pointer;
   position: relative;
+
+  @media(max-width: 690px) {
+    font-size: 0.8rem;
+  }
+    @media(max-width: 405px) {
+    margin-left: 16px;
+    font-size: 0.7rem;
+  }
 `
 
-const ItemListContainer = ({ isLanding = false }) => {
+const BoxContainer = styled(Box)`
+  @media(max-width: 405px) {
+    width: 300px;
+  }
+`
+
+const MenuDesplegable = styled.div`
+  @media(max-width: 405px) {
+    top: 49px !important;
+  }
+`
+
+const ItemListContainer = () => {
   const { gender } = useParams();
   const [products, setProducts] = useProducts([]);
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -49,16 +68,10 @@ const ItemListContainer = ({ isLanding = false }) => {
   const params = new URLSearchParams(location.search);
   const [productsFiltered, setProductsFiltered] = useState([]);
   const [order, setOrder] = useState("Ordenar por");
-
-  const categorias = params.getAll("categoria");
-
-  const modelos = params.getAll("modelo");
-
-  const genders = params.getAll("gender");
-
-  const [cart, setCart] = useMyContext();
-    console.log(cart)
   
+  const isMobile = useMediaQuery(`(max-width: 690px)`);
+  const categorias = params.getAll("categoria");
+  const modelos = params.getAll("modelo");
 
   useEffect(() => {
     if (order === "Menor a mayor") {
@@ -84,27 +97,27 @@ const ItemListContainer = ({ isLanding = false }) => {
     getItemsSelect();
   }, [gender]);
 
-useEffect(() => {
-  const getItemsByFilter = async () => {
-    let filtrados = [...productsFiltered];
-    
-    if (categorias.length > 0) {
-      filtrados = filtrados.filter((p) =>
-        categorias.some((cat) => p.categoria.includes(cat))
-      );
-    }
+  useEffect(() => {
+    const getItemsByFilter = async () => {
+      let filtrados = [...productsFiltered];
 
-    if (modelos.length > 0) {
-      filtrados = filtrados.filter((p) =>
-        modelos.some((m) => p.title.includes(m.toUpperCase()))
-      );
-    }
+      if (categorias.length > 0) {
+        filtrados = filtrados.filter((p) =>
+          categorias.some((cat) => p.categoria.includes(cat))
+        );
+      }
 
-    setProducts(filtrados);
-  };
+      if (modelos.length > 0) {
+        filtrados = filtrados.filter((p) =>
+          modelos.some((m) => p.title.includes(m.toUpperCase()))
+        );
+      }
 
-  getItemsByFilter();
-}, [JSON.stringify(categorias), JSON.stringify(modelos), productsFiltered]);
+      setProducts(filtrados);
+    };
+
+    getItemsByFilter();
+  }, [JSON.stringify(categorias), JSON.stringify(modelos), productsFiltered]);
 
 
   useEffect(() => {
@@ -121,27 +134,28 @@ useEffect(() => {
     };
   }, []);
 
+
   return (
-    <Box sx={{ display: "flex", width: "100%", height: "100%" }}>
+    <Box sx={{ display: "flex",flexDirection: isMobile ? "column": "row",alignItems: isMobile ? "center" : "normal",width:"100%" , height: "100%", position: isMobile ? "relative" : "unset" }}>
 
-      <Filters />
-
-      <Box sx={{ width: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "flex-start", marginTop: "45px", padding: "0px 40px" }}>
-        <Box sx={{ display: "flex", flexDirection: "row", width: "95%", justifyContent: "space-between", alignItems: "center" }}>
+      <Filters menuMobile={isMobile} />
+      
+      <BoxContainer sx={{ width: isMobile ? "400px" : "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: isMobile ? "center" : "flex-start", marginTop: "45px", padding: "0px 40px" }}>
+        <Box sx={{ display: "flex", flexDirection: "row", width: "100%", justifyContent: "space-between", alignItems: "center" }}>
           <Typography>{products.length} productos</Typography>
           <OrderByPrice ref={menuRef} onClick={() => { setDisplayMenu(!displayMenu) }}>
             {order} <FaArrowDown size={12} />
-            {displayMenu ? <div style={{ display: "flex", flexDirection: "column", border: "1px solid lightgrey", borderRadius: "6px", alignItems: "center", justifyContent: "center", backgroundColor: "#fff", position: "absolute", bottom: "-83px" }}>
+            {displayMenu ? <MenuDesplegable style={{ display: "flex", flexDirection: "column", border: "1px solid lightgrey", borderRadius: "6px", alignItems: "center", justifyContent: "center", backgroundColor: "#fff", position: "absolute", top: isMobile ? "35px" : "40px" }}>
               <div onClick={() => setOrder("Menor a mayor")} style={{ borderBottom: "1px solid lightgrey", padding: "8px 10px" }}>Menor a mayor</div>
               <div onClick={() => setOrder("Mayor a menor")} style={{ padding: "8px 10px" }}>Mayor a menor</div>
-            </div> : false}
+            </MenuDesplegable> : false}
           </OrderByPrice>
         </Box>
 
         <DivContainer>
           <ItemList />
         </DivContainer>
-      </Box>
+      </BoxContainer>
     </Box>
   );
 };

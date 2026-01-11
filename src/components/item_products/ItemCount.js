@@ -1,11 +1,9 @@
-import React from "react";
 import styled from "@emotion/styled";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import { HiPlusSm, HiMinusSm } from "react-icons/hi";
 import { useState } from "react";
-import { useMyContext } from "../context/CartContext";
-import { useWidgetCartContext } from "../context/WidgetCartContext";
-import { useAlert } from "../context/AlertContext";
+import CartContextProvider, { useMyContext } from "../../context/CartContext";
+import { useWidgetCartContext } from "../../context/WidgetCartContext";
 import { Link } from "react-router-dom";
 
 const Container = styled(Box)`
@@ -16,6 +14,10 @@ const Container = styled(Box)`
   align-items: center;
   justify-content: center;
   gap: 5px;
+
+  @media(max-width: 1360px){
+    flex-direction: column;
+  }
 `;
 
 const BoxIcons = styled(Box)`
@@ -42,6 +44,10 @@ const StyledButton = styled(Button)`
         color: #fff;
         transition: all 0.2s;
     }
+
+    @media(max-width: 380px){
+    width: 200px;
+  }
 `
 
 const Subcontainer = styled(Box)`
@@ -62,7 +68,7 @@ const ItemCount = ({
 }) => {
   const [counter, setCounter] = useState(1);
   const [cart, setCart] = useMyContext();
-  const [widgetCounter, setWidgetCounter] = useWidgetCartContext(0);
+  const [widgetCounter, setWidgetCounter, openCart, toggleCart, displayCart1] = useWidgetCartContext();
 
   const plusCounter = () => {
     if (counter < product.stock && !detailCounter) {
@@ -81,13 +87,12 @@ const ItemCount = ({
   };
 
   const onAdd = async () => {
-    console.log(product)
     if (counter <= product.stock) {
       const itemExist = cart.find((item) =>
         item.title === product.title ? true : false
       );
       let newCart;
-      setWidgetCounter(widgetCounter + counter);
+      setWidgetCounter(widgetCounter + 1);
       if (itemExist) {
         newCart = cart.map((item) => {
           if (item.title === product.title) {
@@ -103,6 +108,7 @@ const ItemCount = ({
             quantity: counter,
             price: product.price,
             image: product.picturesUrl[0],
+            stock: product.stock
           },
         ];
       }
@@ -117,6 +123,7 @@ const ItemCount = ({
 
       setCart(newCart);
     }
+    openCart();
   };
   return (
     <Container >
@@ -132,7 +139,7 @@ const ItemCount = ({
         </BoxIcons>
       </Subcontainer>
 
-      <Link to={"/cart"} style={{ textDecoration: "none" }}>
+      <Link to={"/"} style={{ textDecoration: "none" }}>
         <StyledButton
           variant="outlined"
           disabled={product.stock === 0}

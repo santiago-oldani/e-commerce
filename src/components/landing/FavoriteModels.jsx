@@ -1,10 +1,10 @@
 import styled from '@emotion/styled'
-import shoe_1 from '../assets/imgs/zapa1.png'
-import shoe_2 from '../assets/imgs/zapa2.png'
-import shoe_3 from '../assets/imgs/zapa3.png'
-import shoe_4 from '../assets/imgs/zapa4.png'
-import shoe_5 from '../assets/imgs/zapa5.png'
-import shoe_6 from '../assets/imgs/zapa6.png'
+import shoe_1 from '../../assets/imgs/zapa1.png'
+import shoe_2 from '../../assets/imgs/zapa2.png'
+import shoe_3 from '../../assets/imgs/zapa3.png'
+import shoe_4 from '../../assets/imgs/zapa4.png'
+import shoe_5 from '../../assets/imgs/zapa5.png'
+import shoe_6 from '../../assets/imgs/zapa6.png'
 import { Link } from 'react-router-dom'
 
 const Container = styled.div`
@@ -15,8 +15,6 @@ const Container = styled.div`
     margin: 100px auto 50px auto;
     width: 60%;
     align-self: center;
-
-    
 `
 
 const ModelContainer = styled.div`
@@ -27,6 +25,11 @@ const ModelContainer = styled.div`
     width: 70%;
     gap: 15px;
     height: auto;
+
+    @media (max-width: 550px){
+        flex-direction: column;
+        
+    }
 `
 
 const ModelDiv = styled.div`
@@ -75,6 +78,7 @@ const Title = styled.h2`
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 30px;
+    text-align: center;
 `
 
 const FavoriteModels = () => {

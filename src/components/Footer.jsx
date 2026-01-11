@@ -4,6 +4,7 @@ import { BsTwitterX } from "react-icons/bs";
 
 import { FaYoutube } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const DivContainerFooter = styled.footer`
@@ -43,18 +44,29 @@ const Footer = () => {
   return (
     <DivContainerFooter>
       <IconsContainer>
-        <CircleIcons>
-          <FaInstagram size={35}/>
-        </CircleIcons>
-        <CircleIcons>
-          <BsTwitterX size={35}/>
-        </CircleIcons>
-        <CircleIcons>
-          <FaYoutube size={35}/>
-        </CircleIcons>
-        <CircleIcons>
-          <FaFacebook size={35}/>
-        </CircleIcons>
+        <a href="https://www.instagram.com/" target="_blank">
+          <CircleIcons>
+            <FaInstagram size={35} color="white"/>
+          </CircleIcons>
+        </a>
+
+        <a href="https://x.com/" target="_blank">
+          <CircleIcons>
+            <BsTwitterX size={35} color="white"/> 
+          </CircleIcons>
+        </a>
+
+        <a href="https://www.youtube.com/" target="_blank">
+          <CircleIcons>
+            <FaYoutube size={35} color="white" />
+          </CircleIcons>
+        </a>
+
+        <a href="https://www.facebook.com/" target="_blank">
+          <CircleIcons>
+            <FaFacebook size={35} color="white"/>
+          </CircleIcons>
+        </a>
       </IconsContainer>
     </DivContainerFooter>
   )

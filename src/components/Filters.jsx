@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, FormControl, InputLabel, MenuItem, Select, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -13,6 +13,13 @@ const FiltersContainer = styled.div`
   justify-content: flex-start;
   gap: 25px;
   padding-right: 75px;
+
+  @media(max-width: 690px){
+    flex-direction: row;
+  }
+  @media(max-width: 405px){
+   flex-direction: column;
+  }
 `
 
 const InputContainer = styled.div`
@@ -34,25 +41,23 @@ const InputFilter = styled.input`
 const LabelFilter = styled.label`
   font-size: 1rem;
   cursor: pointer;
-
 `
 
-
-const Filters = () => {
+const Filters = ({ menuMobile }) => {
     const location = useLocation();
     const navigate = useNavigate();
     const [remove, setRemove] = useRemoveFilters();
     const params = new URLSearchParams(location.search);
     const [isActive, setIsActive] = useState(false);
 
-    useEffect(() =>{
-        if(remove){
+    useEffect(() => {
+        if (remove) {
             setIsActive(true);
         }
     }, [remove])
 
-    const clearFilters = (checked) =>{
-        if(isActive){
+    const clearFilters = (checked) => {
+        if (isActive) {
             checked = false;
             setIsActive(false);
         }
@@ -77,71 +82,71 @@ const Filters = () => {
     };
 
     return (
+        <>
+            <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", marginTop: "40px", padding: "0 10px 0px 20px" }}>
+                <Typography variant="h4"
+                    sx={{
+                        whiteSpace: "nowrap",
+                        marginBottom: "24px",
+                        fontSize: "1.2rem",
+                    }}>
+                    Todos los productos
+                </Typography>
 
-        <Box sx={{ display: "flex", flexDirection: "column", alignItems: "start", marginTop: "40px", padding: "0 10px 0px 20px" }}>
+                <FiltersContainer>
+                    <h5 style={{ fontWeight: "600" }}>Filtros</h5>
 
-            <Typography variant="h4"
-                sx={{
-                    whiteSpace: "nowrap",
-                    marginBottom: "24px",
-                    fontSize: "1.2rem",
-                }}>
-                Todos los productos
-            </Typography>
+                    <Box>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="zapatillas" name="categoria" value="zapatillas" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="zapatillas">Zapatillas</LabelFilter>
+                        </InputContainer>
 
-            <FiltersContainer>
-                <h5 style={{ fontWeight: "600" }}>Filtros</h5>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="ropa" name="categoria" value="ropa" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="ropa">Ropa</LabelFilter>
+                        </InputContainer>
 
-                <Box>
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="zapatillas" name="categoria" value="zapatillas" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="zapatillas">Zapatillas</LabelFilter>
-                    </InputContainer>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="accesorios" name="categoria" value="accesorios" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="accesorios">Accesorios</LabelFilter>
+                        </InputContainer>
+                    </Box>
 
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="ropa" name="categoria" value="ropa" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="ropa">Ropa</LabelFilter>
-                    </InputContainer>
+                    <Box>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="air force" name="modelo" value="air force" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="air force">Air Force</LabelFilter>
+                        </InputContainer>
 
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="accesorios" name="categoria" value="accesorios" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="accesorios">Accesorios</LabelFilter>
-                    </InputContainer>
-                </Box>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="jordan 1" name="modelo" value="JORDAN AIR 1" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="jordan 1">Jordan 1</LabelFilter>
+                        </InputContainer>
 
-                <Box>
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="air force" name="modelo" value="air force" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="air force">Air Force</LabelFilter>
-                    </InputContainer>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="samba" name="modelo" value="samba" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="samba">Samba</LabelFilter>
+                        </InputContainer>
 
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="jordan 1" name="modelo" value="JORDAN AIR 1" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="jordan 1">Jordan 1</LabelFilter>
-                    </InputContainer>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="campus" name="modelo" value="campus" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="campus">Campus</LabelFilter>
+                        </InputContainer>
 
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="samba" name="modelo" value="samba" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="samba">Samba</LabelFilter>
-                    </InputContainer>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="suede" name="modelo" value="suede" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="suede">Suede</LabelFilter>
+                        </InputContainer>
 
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="campus" name="modelo" value="campus" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="campus">Campus</LabelFilter>
-                    </InputContainer>
-
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="suede" name="modelo" value="suede" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="suede">Suede</LabelFilter>
-                    </InputContainer>
-
-                    <InputContainer>
-                        <InputFilter type="checkbox" id="superstar" name="modelo" value="superstar" onChange={handleCheckboxChange} />
-                        <LabelFilter htmlFor="superstar">Superstar</LabelFilter>
-                    </InputContainer>
-                </Box>
-            </FiltersContainer>
-        </Box>
+                        <InputContainer>
+                            <InputFilter type="checkbox" id="superstar" name="modelo" value="superstar" onChange={handleCheckboxChange} />
+                            <LabelFilter htmlFor="superstar">Superstar</LabelFilter>
+                        </InputContainer>
+                    </Box>
+                </FiltersContainer>
+            </Box>
+        </>
     )
 }
 

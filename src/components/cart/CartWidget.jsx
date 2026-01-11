@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import { Box } from '@mui/material';
 import { IoBagAddOutline } from "react-icons/io5";
-import { Link } from 'react-router-dom';
-import { useWidgetCartContext } from '../context/WidgetCartContext';
+import { useWidgetCartContext } from '../../context/WidgetCartContext';
+import { useState } from 'react';
+import CartContainer from './CartContainer';
 
 const CounterCart = styled(Box)`
     display: flex;
@@ -17,18 +18,19 @@ const CounterCart = styled(Box)`
     z-index: 20;
     left: 18px;
     font-size: 10px;
+    cursor: pointer;
 `
 
 const CartWidget = () => {
-    const [WidgetCounter,] = useWidgetCartContext()
+    const [widgetCounter, setWidgetCounter, openCart, toggleCart, displayCart1] = useWidgetCartContext();
     return (
-        <Box style={{position: "relative"}}>
-            <CounterCart style={{ position: "absolute", bottom: "0px"}}>{WidgetCounter}</CounterCart>
-            <Link to={'/cart'} style={{ textDecoration: 'none', color: 'color' }}>
+        <>
+            <Box style={{ position: "relative" }} onClick={() => toggleCart()}>
+                <CounterCart style={{ position: "absolute", bottom: "0px" }}>{widgetCounter}</CounterCart>
                 <IoBagAddOutline style={{ width: '30px', height: 'auto', marginRight: '60px', cursor: 'pointer', color: '#000' }} />
-            </Link>
-        </Box>
+            </Box>
+            <CartContainer isVisible={displayCart1} setIsVisible={toggleCart} />
+        </>
     )
 }
-
 export default CartWidget;

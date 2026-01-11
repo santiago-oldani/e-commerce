@@ -1,11 +1,9 @@
 import styled from "styled-components";
-import CartWidget from "./CartWidget";
+import CartWidget from "./cart/CartWidget";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useRemoveFilters } from "../context/RemoveFilters";
 import { IoIosMenu } from "react-icons/io";
-
-
 
 const ContainerNav = styled.nav`
   display: flex;
@@ -109,6 +107,19 @@ const Logo = styled.h2`
   }
 `
 
+const UlDiv = styled.div`
+  position: absolute;
+  left: -37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #636363;
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+`
+
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [remove, setRemove] = useRemoveFilters(false);
@@ -119,7 +130,7 @@ const NavBar = () => {
     const handleMenu = () => {
       if (window.innerWidth < 900) {
         setMenuDropDownActive(true);
-      } else{
+      } else {
         setMenuDropDownActive(false);
       }
     }
@@ -139,7 +150,6 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
 
   }, [])
-
   return (
     <ContainerNav>
       <SubContainerNavTop>
@@ -150,7 +160,38 @@ const NavBar = () => {
           <Logo>SHOP</Logo>
         </Link>
 
-        {menuDropdownActive ? <IoIosMenu onClick={() => setMenuClicked(!menuClicked)} size={40}/> : <UlNavBar>
+        {menuDropdownActive ? <div style={{ position: "relative" }}><IoIosMenu onClick={() => setMenuClicked(!menuClicked)} size={40} style={{cursor:"pointer"}} />
+          {menuClicked ? <UlDiv>
+            <Link
+              to={"/products/all"}
+              style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+              onClick={() => setRemove(true)}
+            >
+              <p style={{ cursor: "pointer" }}>Productos</p>
+            </Link>
+            <Link
+              to={"/products/hombre"}
+              style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+              onClick={() => setRemove(true)}
+            >
+              <p style={{ cursor: "pointer" }}>Hombre</p>
+            </Link>
+            <Link
+              to={"/products/mujer"}
+              style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+              onClick={() => setRemove(true)}
+            >
+              <p style={{ cursor: "pointer" }}>Mujer</p>
+            </Link>
+            <Link
+              to={"/products/niño"}
+              style={{ textDecoration: "none", listStyle: "none", color: "black" }}
+              onClick={() => setRemove(true)}
+            >
+              <p style={{ margin: 0, cursor: "pointer" }}>Niños</p>
+            </Link>
+          </UlDiv> : null}
+        </div> : <UlNavBar>
           <Link
             to={"/products/all"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
@@ -180,6 +221,8 @@ const NavBar = () => {
             <LiNavBar>Niños</LiNavBar>
           </Link>
         </UlNavBar>}
+
+
 
 
         <CartWidget />

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
-import man from '../assets/imgs/hombre.jpg'
-import woman from '../assets/imgs/mujer.jpg'
-import kid from '../assets/imgs/nene.jpg'
+import man from '../../assets/imgs/hombre.jpg'
+import woman from '../../assets/imgs/mujer.jpg'
+import kid from '../../assets/imgs/nene.jpg'
 import { Link } from 'react-router-dom'
 
 const BannerDiv = styled.div`
@@ -13,6 +13,11 @@ const BannerDiv = styled.div`
     height: auto;
     gap: 15px;
     margin-bottom: 100px;
+
+    @media (max-width: 950px){
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const ImageWrapper = styled.div`
