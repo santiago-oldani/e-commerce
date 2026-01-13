@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { useMyContext } from "../../context/CartContext";
 import { useWidgetCartContext } from "../../context/WidgetCartContext";
 import { useProducts } from "../../context/ProductsContext";
@@ -20,6 +20,11 @@ const ContainerProduct = styled(Box)`
 const ImageProduct = styled.img`
   width: 98px;
   height: 98px;
+
+  @media(max-width: 470px){
+    width: 60px;
+    height: 60px;
+  }
 `;
 
 const ProductsInCart = () => {
@@ -30,6 +35,8 @@ const ProductsInCart = () => {
   const [counterProduct, setCounterProduct] = useState();
 
   console.log(products, 'estos son los productos');
+
+  const isMobile = useMediaQuery('(max-width:470px)');
 
   const minusPlusCounter = (type, product) => {
   const updatedCart = cart.map((item) => {
@@ -97,7 +104,7 @@ const ProductsInCart = () => {
               <Typography
                 sx={{
                   fontWeight: "400",
-                  fontSize: "0.8rem",
+                  fontSize: isMobile ? "0.7rem" : "0.8rem",
                 }}
               >
                 {item.title}
@@ -109,7 +116,7 @@ const ProductsInCart = () => {
                   justifyContent: "space-around",
                 }}
               >
-                <Typography sx={{ fontWeight: 'bold', marginTop: '8px' }}>{formatPrice(calculateToFixed(item))}</Typography>
+                <Typography sx={{ fontWeight: 'bold', marginTop: '8px', fontSize: isMobile ? "0.8rem" : "1rem" }}>{formatPrice(calculateToFixed(item))}</Typography>
                 <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', border: "1px solid #f2f2f2", marginTop: '8px' }}>
                   <div onClick={() => minusPlusCounter("min", item)} style={{ padding: '10px 5px', display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                     <FaMinus style={{ color: "#7c7c7c", fontWeight: 'lighter', width: '15px', height: '10px' }} />
@@ -127,7 +134,7 @@ const ProductsInCart = () => {
           </ContainerProduct>
 
           <IoTrash
-            size={35}
+            size={isMobile ? 60 : 35}
             color="#a5a5a5"
             onClick={() => {
               deleteItemFromArray(item);

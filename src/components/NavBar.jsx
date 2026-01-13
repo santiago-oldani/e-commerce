@@ -116,8 +116,24 @@ const UlDiv = styled.div`
   justify-content: center;
   border: 1px solid #636363;
   background-color: #fff;
-  padding: 10px 20px;
+  padding: 10px 5px;
   border-radius: 12px;
+`
+
+const LinkMobile = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  textDecoration: none;
+  listStyle: none;
+  color: black;
+  padding: 5px;
+  width: 100%;
+
+  &:hover{
+    background-color: #ebebeb;
+  }
 `
 
 const NavBar = () => {
@@ -140,6 +156,11 @@ const NavBar = () => {
     return () => window.removeEventListener('resize', handleMenu)
   }, [])
 
+  const handleLinkClick = () => {
+  setRemove(true);
+  setMenuClicked(false);
+};
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 0)
@@ -156,67 +177,67 @@ const NavBar = () => {
 
       </SubContainerNavTop>
       <SubContainerNavMid scrolled={scrolled}>
-        <Link to="/" style={{ textDecoration: "none" }} onClick={() => setRemove(true)}>
+        <Link to="/" style={{ textDecoration: "none" }} onClick={() => handleLinkClick()}>
           <Logo>SHOP</Logo>
         </Link>
 
         {menuDropdownActive ? <div style={{ position: "relative" }}><IoIosMenu onClick={() => setMenuClicked(!menuClicked)} size={40} style={{cursor:"pointer"}} />
           {menuClicked ? <UlDiv>
-            <Link
+            <LinkMobile
               to={"/products/all"}
               style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-              onClick={() => setRemove(true)}
+              onClick={() => handleLinkClick()}
             >
-              <p style={{ cursor: "pointer" }}>Productos</p>
-            </Link>
-            <Link
+              <p style={{ cursor: "pointer", margin: '0px' }}>Productos</p>
+            </LinkMobile>
+            <LinkMobile
               to={"/products/hombre"}
               style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-              onClick={() => setRemove(true)}
+              onClick={() => handleLinkClick()}
             >
-              <p style={{ cursor: "pointer" }}>Hombre</p>
-            </Link>
-            <Link
+              <p style={{ cursor: "pointer", margin: '0px' }}>Hombre</p>
+            </LinkMobile>
+            <LinkMobile
               to={"/products/mujer"}
               style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-              onClick={() => setRemove(true)}
+              onClick={() => handleLinkClick()}
             >
-              <p style={{ cursor: "pointer" }}>Mujer</p>
-            </Link>
-            <Link
+              <p style={{ cursor: "pointer", margin: '0px' }}>Mujer</p>
+            </LinkMobile>
+            <LinkMobile
               to={"/products/niño"}
               style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-              onClick={() => setRemove(true)}
+              onClick={() => handleLinkClick()}
             >
-              <p style={{ margin: 0, cursor: "pointer" }}>Niños</p>
-            </Link>
+              <p style={{ margin: 0, cursor: "pointer", margin: '0px' }}>Niños</p>
+            </LinkMobile>
           </UlDiv> : null}
         </div> : <UlNavBar>
           <Link
             to={"/products/all"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-            onClick={() => setRemove(true)}
+            onClick={() => handleLinkClick()}
           >
             <LiNavBar>Productos</LiNavBar>
           </Link>
           <Link
             to={"/products/hombre"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-            onClick={() => setRemove(true)}
+            onClick={() => handleLinkClick()}
           >
             <LiNavBar>Hombre</LiNavBar>
           </Link>
           <Link
             to={"/products/mujer"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-            onClick={() => setRemove(true)}
+            onClick={() => handleLinkClick()}
           >
             <LiNavBar>Mujer</LiNavBar>
           </Link>
           <Link
             to={"/products/niño"}
             style={{ textDecoration: "none", listStyle: "none", color: "black" }}
-            onClick={() => setRemove(true)}
+            onClick={() => handleLinkClick()}
           >
             <LiNavBar>Niños</LiNavBar>
           </Link>

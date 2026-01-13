@@ -120,7 +120,6 @@ const ItemCount = ({
         return producto;
       });
       setProducts(newProductsList);
-
       setCart(newCart);
     }
     openCart();

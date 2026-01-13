@@ -25,6 +25,10 @@ const ContainerDivCart = styled.div`
     top: 0;
     right: 0;
     z-index: 2000;
+
+    @media(max-width: 470px){
+        width: 250px;
+    }
 `;
 
 const CartContainer = ({ isVisible, setIsVisible }) => {
@@ -70,7 +74,7 @@ const CartContainer = ({ isVisible, setIsVisible }) => {
                             style={{ cursor: 'pointer', position: "absolute", left: "-50px", top: "9px" }}
                             onClick={() => setIsVisible(false)}
                         />
-                        <div style={{ display: "flex", alignItems: 'center', justifyContent: 'start', width: "100%", height: "50px", backgroundColor: '#e4e4e4', color: '#343436', fontWeight: 'bold' }}>
+                        <div style={{ display: "flex", alignItems: 'center', justifyContent: 'start', width: "100%", minHeight: '50px',height: "50px", backgroundColor: '#e4e4e4', color: '#343436', fontWeight: 'bold' }}>
                             <span style={{ marginLeft: '35px' }}>Carrito</span>
                         </div>
                         <Cart />
