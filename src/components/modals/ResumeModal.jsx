@@ -4,7 +4,6 @@ import { calcularTotal, formatPrice } from "../../utils";
 import { LiaCcVisa, LiaCcMastercard } from "react-icons/lia";
 import { BsCreditCard2Back } from "react-icons/bs";
 import styled from "@emotion/styled";
-import { set } from "react-hook-form";
 import { useMyContext } from "context/CartContext";
 
 const ResumeContainer = styled(Box)`
