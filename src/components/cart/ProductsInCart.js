@@ -34,8 +34,6 @@ const ProductsInCart = () => {
   const [isOneProduct, setIsOneProduct] = useState();
   const [counterProduct, setCounterProduct] = useState();
 
-  console.log(products, 'estos son los productos');
-
   const isMobile = useMediaQuery('(max-width:470px)');
 
   const minusPlusCounter = (type, product) => {
@@ -74,12 +72,10 @@ const ProductsInCart = () => {
     
     const updatedProducts = products.map((item) => {
       if (item.title === product.title) {
-        console.log(item)
         return { ...item, stock: item.stock + product.quantity };
       }
       return item;
     });
-    console.log(updatedProducts);
     setProducts(updatedProducts);
     setCartCounter(contador);
   };
