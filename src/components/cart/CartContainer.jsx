@@ -25,6 +25,7 @@ const ContainerDivCart = styled.div`
     top: 0;
     right: 0;
     z-index: 2000;
+    padding-bottom: 30px;
 
     @media(max-width: 470px){
         width: 250px;
