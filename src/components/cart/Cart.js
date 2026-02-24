@@ -1,9 +1,9 @@
-import { Box, Modal, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "@emotion/styled";
 import ProductsInCart from "./ProductsInCart";
 import { useMyContext } from "../../context/CartContext";
 import { Button } from "@mui/material";
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import { calcularTotal, formatPrice } from "../../utils";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoBag } from "react-icons/io5";

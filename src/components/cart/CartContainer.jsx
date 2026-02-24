@@ -19,7 +19,7 @@ const ContainerDivCart = styled.div`
     display: flex;
     flex-direction: column;
     background-color: #fff;
-    height: 100vh;
+    height: 100%;
     width: 400px;
     position: fixed;
     top: 0;

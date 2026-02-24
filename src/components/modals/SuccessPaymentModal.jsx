@@ -7,7 +7,6 @@ import {
 } from '@mui/material';
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdCloseCircleOutline } from "react-icons/io";
-import { Link } from 'react-router-dom';
 
 const SuccessPaymentModal = ({ isOpen, setWhichModal }) => {
   return (
