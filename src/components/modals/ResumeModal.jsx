@@ -23,6 +23,7 @@ const ResumeContainer = styled(Box)`
   height: 60%;
   padding: 30px;
   border: 2px solid #ebebeb;
+  z-index: 30000;
 
   @media(max-width:825px){
     width: 310px;
